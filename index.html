@@ -3,63 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عيد ميلاد سعيد سمية ❤️</title>
-
+<title>Happy Birthday, Soumia ❤️</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%;overflow:hidden}
 body{
+  background:#100006;color:#fff;
   font-family:Arial,Tahoma,sans-serif;
-  background:#170008;color:#fff;
 }
 .scene{
-  position:absolute;inset:0;
-  display:none;align-items:center;justify-content:center;
-  flex-direction:column;text-align:center;overflow:hidden;
-  padding:22px;
-  background:radial-gradient(ellipse at center,#52051f 0%,#25000e 55%,#080006 100%);
+  position:absolute;inset:0;display:none;
+  align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;
+  overflow:hidden;padding:20px;
+  background:radial-gradient(ellipse at center,#58091f,#25000d 65%,#080004);
 }
 .scene.active{display:flex}
-h1,h2,p{position:relative;z-index:3}
-h1{font-size:clamp(27px,7vw,48px);line-height:1.6}
-h2{font-size:clamp(23px,6vw,36px);line-height:1.7}
-p{font-size:clamp(17px,4.5vw,24px);line-height:1.9}
-.gold{color:#ffe3a2;text-shadow:0 0 18px #ffbd55}
+h1{font-size:clamp(28px,7vw,48px);line-height:1.6}
+h2{font-size:clamp(24px,6vw,36px);line-height:1.7}
+p{font-size:clamp(17px,4.5vw,23px);line-height:1.9}
+.gold{color:#ffe0a0;text-shadow:0 0 18px #ffba4a}
 button{
-  position:relative;z-index:5;border:1px solid #ffb6c9;
-  color:white;background:linear-gradient(135deg,#9e103d,#420019);
-  border-radius:50px;padding:17px 32px;font-size:23px;
-  box-shadow:0 0 28px #ff174e88;cursor:pointer;
+  z-index:5;padding:16px 30px;border-radius:50px;
+  border:1px solid #ffc0d0;background:linear-gradient(135deg,#a50039,#450019);
+  color:white;font-size:22px;box-shadow:0 0 30px #ff174e99;
 }
-.stars{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:
-  radial-gradient(2px 2px at 10% 20%,white 60%,transparent),
-  radial-gradient(2px 2px at 80% 16%,#ffd8e3 60%,transparent),
-  radial-gradient(2px 2px at 40% 75%,white 60%,transparent),
-  radial-gradient(2px 2px at 70% 62%,#ffb8c9 60%,transparent),
-  radial-gradient(2px 2px at 23% 55%,white 60%,transparent);
-  background-size:230px 200px;
-  animation:twinkle 2s infinite alternate;
-}
+.stars{position:absolute;inset:0;pointer-events:none;
+ background-image:
+ radial-gradient(2px 2px at 10% 20%,white 60%,transparent),
+ radial-gradient(2px 2px at 80% 16%,#ffd8e3 60%,transparent),
+ radial-gradient(2px 2px at 40% 75%,white 60%,transparent),
+ radial-gradient(2px 2px at 70% 62%,#ffb8c9 60%,transparent),
+ radial-gradient(2px 2px at 23% 55%,white 60%,transparent);
+ background-size:220px 200px;animation:twinkle 2s infinite alternate}
 @keyframes twinkle{from{opacity:.25}to{opacity:1}}
-.rose{position:absolute;font-size:26px;animation:floatUp 7s linear infinite;opacity:.8}
+.rose{position:absolute;font-size:30px;animation:floatUp 7s linear infinite}
 @keyframes floatUp{
-  0%{transform:translateY(110vh) rotate(0deg);opacity:0}
-  15%{opacity:.9}100%{transform:translateY(-15vh) rotate(360deg);opacity:0}
+  0%{transform:translateY(110vh) rotate(0);opacity:0}
+  15%{opacity:.9}
+  100%{transform:translateY(-15vh) rotate(360deg);opacity:0}
 }
-.start-heart{
-  font-size:clamp(90px,25vw,150px);
-  filter:drop-shadow(0 0 24px #ff164f);
-  animation:beat 1s infinite;
-}
+.startHeart{font-size:125px;filter:drop-shadow(0 0 25px #ff164f);animation:beat 1s infinite}
 @keyframes beat{50%{transform:scale(1.13)}}
 .count{
-  font-size:clamp(100px,35vw,190px);
-  font-weight:bold;color:#ff315c;
-  text-shadow:0 0 30px #ff003c,0 0 75px #ff003c;
-  animation:countMove 2s ease-in-out both;
-}
+ font-size:clamp(110px,36vw,190px);font-weight:bold;color:#ff315c;
+ text-shadow:0 0 30px #ff003c,0 0 75px #ff003c;
+ animation:countMove 2s ease-in-out both}
 @keyframes countMove{
   0%{transform:translateX(110vw) scale(.5);opacity:0}
   25%{transform:translateX(0) scale(1.2);opacity:1}
@@ -67,345 +56,243 @@ button{
   100%{transform:translateX(-110vw) scale(.5);opacity:0}
 }
 
-/* القلب يتشكل تدريجيا */
-.heart-wrap{position:relative;width:min(86vw,380px);height:320px;display:flex;align-items:center;justify-content:center}
-.heart-shape{
-  position:absolute;width:180px;height:180px;opacity:0;
-  transform:rotate(-45deg) scale(.1);
-  background:linear-gradient(135deg,#ff174e,#9e0030);
-  filter:drop-shadow(0 0 25px #ff174e);
-  animation:heartBuild 7s ease forwards;
-}
-.heart-shape:before,.heart-shape:after{
-  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
-  background:inherit;
-}
-.heart-shape:before{top:-90px;left:0}
-.heart-shape:after{left:90px;top:0}
+/* قلب متوهج يتشكل تدريجيا */
+.heartWrap{position:relative;width:min(88vw,390px);height:340px;display:flex;align-items:center;justify-content:center}
+.heartShape{
+ position:absolute;width:145px;height:145px;
+ background:linear-gradient(135deg,#ff174e,#990026);
+ transform:rotate(-45deg) scale(.05);opacity:0;
+ filter:drop-shadow(0 0 13px #ff174e);
+ animation:heartBuild 7s ease forwards}
+.heartShape:before,.heartShape:after{
+ content:"";position:absolute;width:145px;height:145px;border-radius:50%;background:inherit}
+.heartShape:before{top:-72px;left:0}
+.heartShape:after{left:72px;top:0}
 @keyframes heartBuild{
-  0%{opacity:0;transform:rotate(-45deg) scale(.05)}
-  40%{opacity:.9;transform:rotate(-45deg) scale(.65)}
-  75%{opacity:1;transform:rotate(-45deg) scale(1)}
-  100%{opacity:1;transform:rotate(-45deg) scale(1)}
+  0%{opacity:0;transform:rotate(-45deg) scale(.05);filter:brightness(2) drop-shadow(0 0 3px red)}
+  35%{opacity:1;transform:rotate(-45deg) scale(.6);filter:brightness(1.6) drop-shadow(0 0 25px red)}
+  75%,100%{opacity:1;transform:rotate(-45deg) scale(1);filter:brightness(1.2) drop-shadow(0 0 30px red)}
 }
-.heart-text{position:relative;z-index:3;display:flex;flex-direction:column;gap:8px;align-items:center}
+.heartText{position:relative;z-index:3;display:flex;align-items:center;flex-direction:column;gap:10px}
 .love{direction:ltr;color:#ff203f;font-size:clamp(24px,7vw,38px);font-style:italic;font-weight:bold;text-shadow:0 0 18px red}
-.soumia{font-size:clamp(34px,9vw,53px);font-weight:bold;color:#65001f;text-shadow:0 1px 1px #ff9aaf}
-.side-love{position:absolute;top:50%;font-size:14px;letter-spacing:3px;color:#ff7d99;writing-mode:vertical-rl;opacity:.65}
-.side-love.left{left:7px}.side-love.right{right:7px}
-
-.message{max-width:800px;padding:20px}
-.message p{margin-top:12px}
-.big-heart{font-size:70px;filter:drop-shadow(0 0 18px #ff164f);animation:beat 1s infinite}
+.soumia{font-size:clamp(36px,9vw,52px);font-weight:bold;color:#65001f;text-shadow:0 1px 1px #ff9aaf}
+.sideLove{position:absolute;top:45%;writing-mode:vertical-rl;color:#ff8aa8;opacity:.7;letter-spacing:3px}
+.left{left:8px}.right{right:8px}
+.message{z-index:3;max-width:850px;padding:18px}
+.bigHeart{font-size:70px;filter:drop-shadow(0 0 20px #ff164f);animation:beat 1s infinite}
 .cake{font-size:95px;filter:drop-shadow(0 0 18px #ffb6c9)}
-.final-title{font-size:clamp(26px,7vw,48px);color:#fff1d3;text-shadow:0 0 18px #ff174e,0 0 45px #ff174e;animation:beat 2s infinite}
-
-/* ألعاب نارية */
+.finalTitle{font-size:clamp(27px,7vw,47px);color:#fff0ce;text-shadow:0 0 18px #ff174e,0 0 45px #ff174e}
 #fireworks{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-.final-hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
-.floating-heart{
-  position:absolute;bottom:-50px;animation:floatUp 5s linear forwards;
-  filter:drop-shadow(0 0 12px #ff164f);
-}
-.final-content{z-index:3;max-width:900px}
-.small{font-size:15px;color:#ffd5df;margin-top:12px}
+#finalHearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.floatingHeart{position:absolute;bottom:-50px;animation:floatUp 5s linear forwards;filter:drop-shadow(0 0 12px #ff164f)}
+.finalContent{z-index:3;max-width:900px}
 </style>
 </head>
-
 <body>
 
-<audio id="birthdayMusic" loop preload="auto">
-  <source src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a" type="audio/mp4">
+<!-- الموسيقى التي رفعتها إلى مستودع GitHub -->
+<audio id="music" loop preload="auto">
+ <source src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a" type="audio/mp4">
 </audio>
 
-<!-- المشهد 1: البداية، لا يدخل ضمن الـ60 ثانية -->
-<section class="scene active" id="scene1">
-  <div class="stars"></div>
-  <div class="rose" style="left:8%;animation-delay:0s">🌹</div>
-  <div class="rose" style="left:75%;animation-delay:2s">🌹</div>
-  <div class="rose" style="left:35%;animation-delay:3s">❤️</div>
-  <div class="start-heart">❤️</div>
-  <h1 class="gold">هدية صغيرة لسمية</h1>
-  <p>عندي ليكِ مفاجأة من القلب 🌹</p>
-  <br>
-  <button onclick="startBirthday()">اضغطي هنا ❤️</button>
+<!-- 1: شاشة البداية، لا تدخل ضمن الستين ثانية -->
+<section class="scene active" id="s1">
+ <div class="stars"></div>
+ <div class="rose" style="left:8%">🌹</div>
+ <div class="rose" style="left:75%;animation-delay:2s">🌹</div>
+ <div class="rose" style="left:35%;animation-delay:3s">❤️</div>
+ <div class="startHeart">❤️</div>
+ <h1 class="gold">هدية صغيرة لسمية</h1>
+ <p>مفاجأة من القلب ❤️🌹</p><br>
+ <button onclick="startShow()">اضغطي هنا ❤️</button>
 </section>
 
-<!-- المشهد 2: العد التنازلي 6 ثوان -->
-<section class="scene" id="scene2">
-  <div class="stars"></div>
-  <div class="count" id="countNumber">3</div>
+<!-- 2: العد التنازلي 6 ثوان -->
+<section class="scene" id="s2">
+ <div class="stars"></div><div class="count" id="number">3</div>
 </section>
 
-<!-- المشهد 3: القلب 7 ثوان -->
-<section class="scene" id="scene3">
-  <div class="stars"></div>
-  <div class="heart-wrap">
-    <div class="heart-shape" id="heartShape"></div>
-    <div class="heart-text">
-      <div class="love">I LOVE YOU</div>
-      <div class="soumia">سمية</div>
-      <div style="font-size:35px">❤️</div>
-    </div>
+<!-- 3: القلب يتشكل 7 ثوان -->
+<section class="scene" id="s3">
+ <div class="stars"></div>
+ <div class="heartWrap">
+  <div class="heartShape" id="heart"></div>
+  <div class="heartText">
+   <div class="love">I LOVE YOU</div>
+   <div class="soumia">سمية</div>
+   <div style="font-size:32px">❤️</div>
   </div>
-  <div class="side-love left">I LOVE YOU</div>
-  <div class="side-love right">I LOVE YOU</div>
+ </div>
+ <div class="sideLove left">I LOVE YOU</div>
+ <div class="sideLove right">I LOVE YOU</div>
 </section>
 
-<!-- المشهد 4: الورود والنجوم 7 ثوان -->
-<section class="scene" id="scene4">
-  <div class="stars"></div>
-  <div class="rose" style="left:8%">🌹</div>
-  <div class="rose" style="left:25%;animation-delay:1s">❤️</div>
-  <div class="rose" style="left:72%;animation-delay:2s">🌹</div>
-  <div class="rose" style="left:85%;animation-delay:3s">✨</div>
-  <div class="message">
-    <div class="big-heart">❤️</div>
-    <h1>أجمل الأشياء لسمية</h1>
-    <p class="gold">أنتِ نجمة مختلفة في سماء قلبي ✨</p>
-    <p>🌹❤️🌹</p>
-  </div>
+<!-- 4: الورود والنجوم 7 ثوان -->
+<section class="scene" id="s4">
+ <div class="stars"></div>
+ <div class="rose" style="left:8%">🌹</div>
+ <div class="rose" style="left:25%;animation-delay:1s">❤️</div>
+ <div class="rose" style="left:72%;animation-delay:2s">🌹</div>
+ <div class="rose" style="left:85%;animation-delay:3s">✨</div>
+ <div class="message">
+  <div class="bigHeart">❤️</div>
+  <h1>أجمل الأشياء لسمية</h1>
+  <p class="gold">أنتِ نجمة مختلفة في سماء قلبي ✨</p>
+  <p>🌹❤️🌹</p>
+ </div>
 </section>
 
-<!-- المشهد 5: عيد الميلاد 5 ثوان -->
-<section class="scene" id="scene5">
-  <div class="stars"></div>
-  <div class="cake">🎂</div>
-  <h1>عيد ميلاد سعيد سمية ❤️</h1>
-  <p class="gold" dir="ltr">Happy Birthday to You 🎉</p>
+<!-- 5: عيد الميلاد 5 ثوان -->
+<section class="scene" id="s5">
+ <div class="stars"></div><div class="cake">🎂</div>
+ <h1>عيد ميلاد سعيد سمية ❤️</h1>
+ <p class="gold" dir="ltr">Happy Birthday to You 🎉</p>
 </section>
 
-<!-- المشهد 6: رسالة الحب 5 ثوان -->
-<section class="scene" id="scene6">
-  <div class="stars"></div>
-  <div class="message">
-    <div class="big-heart">💖</div>
-    <h2>إلى سمية ❤️</h2>
-    <p>عيد ميلاد سعيد يا سمية، يا أجمل حب سكن قلبي، كنبغيك ونتمنى تبقاي ليا فرحة العمر ونور أيامي. ❤️🎂🌹</p>
-  </div>
+<!-- 6: رسالة الحب 5 ثوان -->
+<section class="scene" id="s6">
+ <div class="stars"></div>
+ <div class="message">
+  <div class="bigHeart">💖</div>
+  <h2>إلى سمية ❤️</h2>
+  <p>عيد ميلاد سعيد يا سمية، يا أجمل حب سكن قلبي، كنبغيك ونتمنى تبقاي ليا فرحة العمر ونور أيامي. ❤️🎂🌹</p>
+ </div>
 </section>
 
-<!-- المشهد 7: لحظات حب 10 ثوان -->
-<section class="scene" id="scene7">
-  <div class="stars"></div>
-  <div class="message">
-    <div class="big-heart">❤️‍🔥</div>
-    <h1>سمية، يا أجمل أقداري</h1>
-    <p>لو خيّروني بينكِ وبين العالم، لاخترتُكِ أنتِ؛ لأن ابتسامتكِ عندي أجمل من العالم كله. 🌹</p>
-  </div>
+<!-- 7: مشهد رومانسي 10 ثوان -->
+<section class="scene" id="s7">
+ <div class="stars"></div>
+ <div class="message">
+  <div class="bigHeart">❤️‍🔥</div>
+  <h1>سمية، يا أجمل أقداري</h1>
+  <p>لو خيّروني بينكِ وبين العالم، لاخترتُكِ أنتِ؛ لأن ابتسامتكِ عندي أجمل من العالم كله. 🌹</p>
+ </div>
 </section>
 
-<!-- المشهد 8: النجوم 10 ثوان -->
-<section class="scene" id="scene8">
-  <div class="stars"></div>
-  <div class="message">
-    <h1 class="gold">إلى نجمة قلبي ✨</h1>
-    <p>نتمنى كل أحلامك تتحقق، وكل نهار يجيب ليك فرحة جديدة، وتبقى الضحكة ديالك منوّرة أيامك يا سمية. ❤️</p>
-    <div class="big-heart">🌙💖</div>
-  </div>
+<!-- 8: مشهد النجوم 10 ثوان -->
+<section class="scene" id="s8">
+ <div class="stars"></div>
+ <div class="message">
+  <h1 class="gold">إلى نجمة قلبي ✨</h1>
+  <p>نتمنى كل أحلامك تتحقق، وكل نهار يجيب ليك فرحة جديدة، وتبقى الضحكة ديالك منوّرة أيامك يا سمية. ❤️</p>
+  <div class="bigHeart">🌙💖</div>
+ </div>
 </section>
 
-<!-- المشهد 9: النهاية 10 ثوان ثم تبقى ظاهرة -->
-<section class="scene" id="scene9">
-  <canvas id="fireworks"></canvas>
-  <div class="final-hearts" id="finalHearts"></div>
-  <div class="final-content">
-    <div class="final-title">كل عام وأنتِ بخير يا سمية ❤️</div>
-    <p class="gold">عيد ميلاد سعيد يا أجمل حب 🎂🌹</p>
-    <p class="small">I LOVE YOU ❤️</p>
-  </div>
+<!-- 9: المشهد الأخير، ألعاب نارية 10 ثوان ثم يبقى ظاهرا -->
+<section class="scene" id="s9">
+ <canvas id="fireworks"></canvas>
+ <div id="finalHearts"></div>
+ <div class="finalContent">
+  <div class="finalTitle">كل عام وأنتِ بخير يا سمية ❤️</div>
+  <p class="gold">عيد ميلاد سعيد يا أجمل حب 🎂🌹</p>
+  <p dir="ltr">I LOVE YOU ❤️</p>
+ </div>
 </section>
 
 <script>
-const TOTAL_DURATION = 60000;
-let started = false;
-let timers = [];
-let fireworkAnimation = null;
-let heartInterval = null;
+const music=document.getElementById("music");
+let started=false,heartTimer=null,raf=null;
 
-const music = document.getElementById("birthdayMusic");
+function show(id){
+ document.querySelectorAll(".scene").forEach(x=>x.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+}
+function after(fn,ms){setTimeout(fn,ms)}
 
-function showScene(id){
-  document.querySelectorAll(".scene").forEach(s=>s.classList.remove("active"));
-  const scene = document.getElementById(id);
-  scene.classList.add("active");
+function startShow(){
+ if(started)return;
+ started=true;
+ music.volume=.8;
+ music.play().catch(()=>console.log("تعذر تشغيل ملف الموسيقى؛ تحقق من اسم الملف."));
+ show("s2");
+
+ const n=document.getElementById("number");
+ function count(v){
+  n.style.animation="none";void n.offsetWidth;
+  n.textContent=v;n.style.animation="countMove 2s ease-in-out both";
+ }
+ count("3");after(()=>count("2"),2000);after(()=>count("1"),4000);
+
+ after(()=>{
+  show("s3");
+  const h=document.getElementById("heart");
+  h.style.animation="none";void h.offsetWidth;
+  h.style.animation="heartBuild 7s ease forwards";
+ },6000);
+ after(()=>show("s4"),13000);
+ after(()=>show("s5"),20000);
+ after(()=>show("s6"),25000);
+ after(()=>show("s7"),30000);
+ after(()=>show("s8"),40000);
+ after(()=>{
+  show("s9");launchFireworks();floatHearts();
+ },50000);
+ // المشهد الأخير يبقى ظاهرًا بعد انتهاء الستين ثانية.
 }
 
-function later(fn, ms){
-  const t = setTimeout(fn,ms);
-  timers.push(t);
+function floatHearts(){
+ const box=document.getElementById("finalHearts");
+ heartTimer=setInterval(()=>{
+  if(!document.getElementById("s9").classList.contains("active"))return;
+  const el=document.createElement("div");
+  el.className="floatingHeart";
+  el.textContent=["❤️","💖","💕","💗","💘"][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*95+"%";
+  el.style.fontSize=(18+Math.random()*35)+"px";
+  el.style.animationDuration=(3+Math.random()*3)+"s";
+  box.appendChild(el);
+  setTimeout(()=>el.remove(),6500);
+ },180);
 }
 
-function startBirthday(){
-  if(started) return;
-  started = true;
+function launchFireworks(){
+ const c=document.getElementById("fireworks"),ctx=c.getContext("2d");
+ let w,h,particles=[],rockets=[];
+ const colors=["#ff174e","#ff4f88","#ffd166","#fff3c4","#ff003c","#ff8fa3"];
+ function resize(){
+  const d=window.devicePixelRatio||1;
+  c.width=innerWidth*d;c.height=innerHeight*d;
+  c.style.width=innerWidth+"px";c.style.height=innerHeight+"px";
+  ctx.setTransform(d,0,0,d,0,0);w=innerWidth;h=innerHeight;
+ }
+ resize();window.addEventListener("resize",resize);
 
-  // تشغيل الموسيقى مباشرة بعد لمسة المستخدم
-  music.volume = 0.8;
-  music.play().catch(()=>{
-    alert("تعذر تشغيل الموسيقى. تأكد أن ملف الأغنية موجود في نفس مستودع GitHub.");
-  });
-
-  showScene("scene2");
-  const number = document.getElementById("countNumber");
-
-  function animateCount(value){
-    number.style.animation = "none";
-    void number.offsetWidth;
-    number.textContent = value;
-    number.style.animation = "countMove 2s ease-in-out both";
+ function launch(){
+  rockets.push({x:Math.random()*w,y:h+5,tx:Math.random()*w,ty:Math.random()*h*.62,
+  speed:5+Math.random()*4,color:colors[Math.floor(Math.random()*colors.length)]});
+ }
+ function explode(x,y,color){
+  const count=100+Math.floor(Math.random()*100);
+  for(let i=0;i<count;i++){
+   const a=Math.random()*Math.PI*2,s=1+Math.random()*6;
+   particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:65+Math.random()*40,
+   max:100,size:1+Math.random()*2.5,color});
   }
+ }
+ function frame(){
+  ctx.fillStyle="rgba(10,0,7,.20)";ctx.fillRect(0,0,w,h);
+  if(Math.random()<.14)launch();
+  if(Math.random()<.035)explode(Math.random()*w,Math.random()*h*.5,colors[Math.floor(Math.random()*colors.length)]);
 
-  animateCount("3");
-  later(()=>animateCount("2"),2000);
-  later(()=>animateCount("1"),4000);
-
-  // 0-6 ثوان: العد التنازلي
-  // 6-13: القلب يتشكل
-  later(()=>{
-    showScene("scene3");
-    const heart = document.getElementById("heartShape");
-    heart.style.animation = "none";
-    void heart.offsetWidth;
-    heart.style.animation = "heartBuild 7s ease forwards";
-  },6000);
-
-  // 13-20: الورود والنجوم
-  later(()=>showScene("scene4"),13000);
-
-  // 20-25: عيد الميلاد
-  later(()=>showScene("scene5"),20000);
-
-  // 25-30: الرسالة الخاصة
-  later(()=>showScene("scene6"),25000);
-
-  // 30-40: مشهد رومانسي
-  later(()=>showScene("scene7"),30000);
-
-  // 40-50: مشهد النجوم
-  later(()=>showScene("scene8"),40000);
-
-  // 50-60: ألعاب نارية ضخمة
-  later(()=>{
-    showScene("scene9");
-    startFireworks();
-    startFloatingHearts();
-  },50000);
-
-  // يبقى المشهد الأخير ظاهرًا بعد انتهاء الستين ثانية.
-}
-
-function startFloatingHearts(){
-  const container = document.getElementById("finalHearts");
-  if(heartInterval) clearInterval(heartInterval);
-
-  heartInterval = setInterval(()=>{
-    if(!document.getElementById("scene9").classList.contains("active")) return;
-    const h = document.createElement("div");
-    h.className = "floating-heart";
-    h.textContent = ["❤️","💖","💕","💗","💘"][Math.floor(Math.random()*5)];
-    h.style.left = Math.random()*95+"%";
-    h.style.fontSize = (18+Math.random()*35)+"px";
-    h.style.animationDuration = (3+Math.random()*3)+"s";
-    container.appendChild(h);
-    setTimeout(()=>h.remove(),6500);
-  },180);
-}
-
-function startFireworks(){
-  const canvas = document.getElementById("fireworks");
-  const ctx = canvas.getContext("2d");
-  let w,h,particles=[],rockets=[];
-  let running = true;
-
-  function resize(){
-    w=canvas.width=window.innerWidth*devicePixelRatio;
-    h=canvas.height=window.innerHeight*devicePixelRatio;
-    canvas.style.width=window.innerWidth+"px";
-    canvas.style.height=window.innerHeight+"px";
-    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
-    w=window.innerWidth;h=window.innerHeight;
+  for(let i=rockets.length-1;i>=0;i--){
+   const r=rockets[i],dx=r.tx-r.x,dy=r.ty-r.y,d=Math.hypot(dx,dy);
+   ctx.beginPath();ctx.arc(r.x,r.y,3,0,Math.PI*2);
+   ctx.fillStyle=r.color;ctx.shadowBlur=15;ctx.shadowColor=r.color;ctx.fill();ctx.shadowBlur=0;
+   if(d<r.speed*2){explode(r.x,r.y,r.color);rockets.splice(i,1);}
+   else{r.x+=dx/d*r.speed;r.y+=dy/d*r.speed;}
   }
-  resize();
-  window.addEventListener("resize",resize);
-
-  const colors=["#ff174e","#ff4f88","#ffd166","#fff3c4","#ff003c","#ff8fa3"];
-
-  function launch(){
-    rockets.push({
-      x:Math.random()*w,
-      y:h+5,
-      tx:Math.random()*w,
-      ty:Math.random()*h*.65,
-      speed:5+Math.random()*4,
-      color:colors[Math.floor(Math.random()*colors.length)]
-    });
+  for(let i=particles.length-1;i>=0;i--){
+   const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vx*=.985;p.vy=p.vy*.985+.025;p.life--;
+   ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle=p.color;
+   ctx.shadowBlur=10;ctx.shadowColor=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+   ctx.shadowBlur=0;if(p.life<=0)particles.splice(i,1);
   }
-
-  function explode(x,y,color){
-    const count=90+Math.floor(Math.random()*100);
-    for(let i=0;i<count;i++){
-      const angle=Math.random()*Math.PI*2;
-      const speed=1+Math.random()*6;
-      particles.push({
-        x,y,
-        vx:Math.cos(angle)*speed,
-        vy:Math.sin(angle)*speed,
-        life:55+Math.random()*45,
-        max:100,
-        size:1+Math.random()*2.5,
-        color
-      });
-    }
-  }
-
-  function frame(){
-    if(!running)return;
-    ctx.fillStyle="rgba(10,0,7,0.20)";
-    ctx.fillRect(0,0,w,h);
-
-    if(Math.random()<.10) launch();
-    if(Math.random()<.025) explode(Math.random()*w,Math.random()*h*.5,colors[Math.floor(Math.random()*colors.length)]);
-
-    rockets.forEach((r,i)=>{
-      const dx=r.tx-r.x,dy=r.ty-r.y;
-      const d=Math.hypot(dx,dy);
-      ctx.beginPath();
-      ctx.arc(r.x,r.y,2.8,0,Math.PI*2);
-      ctx.fillStyle=r.color;
-      ctx.shadowBlur=14;ctx.shadowColor=r.color;ctx.fill();ctx.shadowBlur=0;
-      if(d<r.speed*2){
-        explode(r.x,r.y,r.color);
-        rockets.splice(i,1);
-      }else{
-        r.x+=dx/d*r.speed;
-        r.y+=dy/d*r.speed;
-      }
-    });
-
-    particles.forEach((p,i)=>{
-      p.x+=p.vx;p.y+=p.vy;
-      p.vx*=.985;p.vy=p.vy*.985+.025;p.life--;
-      ctx.globalAlpha=Math.max(0,p.life/p.max);
-      ctx.fillStyle=p.color;
-      ctx.shadowBlur=10;ctx.shadowColor=p.color;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
-      ctx.shadowBlur=0;
-      if(p.life<=0)particles.splice(i,1);
-    });
-    ctx.globalAlpha=1;
-    fireworkAnimation=requestAnimationFrame(frame);
-  }
-
-  if(fireworkAnimation) cancelAnimationFrame(fireworkAnimation);
-  frame();
-}
-
-// احترام إعدادات تقليل الحركة
-if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-  document.documentElement.style.scrollBehavior="auto";
+  ctx.globalAlpha=1;raf=requestAnimationFrame(frame);
+ }
+ frame();
 }
 </script>
-
 </body>
   </html>
+            
