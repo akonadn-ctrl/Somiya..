@@ -16,72 +16,57 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: Arial, sans-serif;
-  background: #100006;
+  background: #080006;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
 .scene {
   position: absolute;
   inset: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding: 22px;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
   text-align: center;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at center, #52001b 0%, #21000c 48%, #080004 100%);
+    radial-gradient(ellipse at center, #5c001d 0%, #21000c 48%, #050003 100%);
 }
 
 .scene.active {
   display: flex;
 }
 
-h1, h2, p {
-  position: relative;
-  z-index: 2;
-  line-height: 1.8;
-}
-
 h1 {
-  font-size: clamp(28px, 7vw, 50px);
-  color: #ff426a;
-  text-shadow: 0 0 15px #ff003c, 0 0 35px #a00032;
+  color: #ff466e;
+  font-size: clamp(28px, 7vw, 48px);
+  text-shadow: 0 0 12px #ff174d, 0 0 35px #bd0037;
+  line-height: 1.6;
 }
 
 h2 {
-  font-size: clamp(23px, 5vw, 36px);
-  color: #ffd1dc;
+  color: #ffe1e8;
+  font-size: clamp(22px, 5vw, 34px);
+  line-height: 1.7;
 }
 
 p {
   font-size: clamp(18px, 4.5vw, 25px);
+  line-height: 1.9;
 }
 
 button {
-  border: 1px solid #ff9eb5;
-  border-radius: 50px;
-  padding: 17px 35px;
-  font-size: 22px;
-  font-weight: bold;
+  border: 1px solid #ff9bb5;
+  border-radius: 40px;
+  padding: 16px 32px;
   color: white;
-  background: linear-gradient(135deg, #c90040, #570019);
+  background: linear-gradient(135deg, #e00045, #55001c);
+  font-size: 22px;
   box-shadow: 0 0 25px #ff174d;
   cursor: pointer;
-}
-
-.start-heart {
-  font-size: 100px;
-  animation: heartbeat 1.2s infinite;
-  filter: drop-shadow(0 0 20px #ff174d);
-  margin-bottom: 20px;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
 }
 
 .stars {
@@ -93,180 +78,195 @@ button {
     radial-gradient(2px 2px at 80% 15%, #ffd6e0 98%, transparent),
     radial-gradient(2px 2px at 65% 70%, white 98%, transparent),
     radial-gradient(2px 2px at 25% 80%, #ff4c76 98%, transparent),
-    radial-gradient(3px 3px at 90% 55%, white 98%, transparent),
-    radial-gradient(2px 2px at 45% 35%, #ffb7ca 98%, transparent);
-  background-size: 240px 240px;
-  animation: twinkle 3s linear infinite;
+    radial-gradient(3px 3px at 90% 55%, white 98%, transparent);
+  background-size: 220px 220px;
+  animation: twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: .4; }
-  50% { opacity: 1; }
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+.pulse {
+  font-size: 95px;
+  animation: heartbeat 1.2s infinite;
+  filter: drop-shadow(0 0 22px #ff174d);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
 }
 
 .count-number {
-  font-size: clamp(100px, 35vw, 200px);
-  color: #ff174d;
+  font-size: clamp(110px, 35vw, 200px);
   font-weight: bold;
-  text-shadow: 0 0 25px #ff003c, 0 0 70px #ff174d;
-  animation: numberMove 2s ease-in-out both;
+  color: #ff174d;
+  text-shadow: 0 0 30px #ff174d, 0 0 70px #ff003c;
+  animation: numberMove 1.33s ease-in-out both;
 }
 
 @keyframes numberMove {
-  0% { opacity: 0; transform: translateX(100vw) scale(.5); }
-  25% { opacity: 1; transform: translateX(0) scale(1); }
-  75% { opacity: 1; transform: translateX(0) scale(1); }
-  100% { opacity: 0; transform: translateX(-100vw) scale(.5); }
+  0% { opacity: 0; transform: translateX(100vw); }
+  20% { opacity: 1; transform: translateX(0); }
+  80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-100vw); }
 }
 
-.heart-picture {
+.photo {
+  display: block;
   width: min(100%, 700px);
-  max-height: 80vh;
+  max-height: 78vh;
   object-fit: contain;
-  border-radius: 15px;
-  box-shadow: 0 0 35px #ff174d;
-  animation: heartReveal 7s ease-in-out both;
+  border-radius: 16px;
+  box-shadow: 0 0 32px #ff174d;
 }
 
-@keyframes heartReveal {
-  0% {
+.heart-photo {
+  animation: revealHeart 6s ease-in-out both;
+}
+
+@keyframes revealHeart {
+  from {
     opacity: 0;
-    transform: scale(.2);
-    filter: brightness(0);
+    transform: scale(.25);
+    filter: brightness(.1);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
     filter: brightness(1);
   }
 }
 
-.rose {
-  font-size: clamp(35px, 10vw, 70px);
-  display: inline-block;
-  margin: 8px;
-  animation: floatRose 3s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 10px #ff174d);
+.rose-row {
+  font-size: clamp(40px, 12vw, 75px);
+  animation: float 2.5s infinite alternate ease-in-out;
+  filter: drop-shadow(0 0 15px #ff174d);
 }
 
-@keyframes floatRose {
-  from { transform: translateY(10px) rotate(-8deg); }
-  to { transform: translateY(-12px) rotate(8deg); }
+@keyframes float {
+  from { transform: translateY(10px); }
+  to { transform: translateY(-10px); }
 }
 
-.message {
-  max-width: 800px;
+.message-box {
+  max-width: 850px;
   padding: 25px;
-  border: 1px solid rgba(255, 100, 140, .5);
-  border-radius: 25px;
-  background: rgba(80, 0, 25, .55);
-  box-shadow: 0 0 30px rgba(255, 0, 70, .25);
+  border: 1px solid #b84061;
+  border-radius: 22px;
+  background: rgba(65, 0, 23, .72);
+  box-shadow: 0 0 35px rgba(255, 0, 70, .3);
 }
 
-.cake {
-  font-size: clamp(75px, 22vw, 130px);
-  filter: drop-shadow(0 0 18px #ff8baf);
-  animation: heartbeat 1.5s infinite;
+.moon {
+  font-size: 100px;
+  filter: drop-shadow(0 0 25px #ffe9a6);
+  animation: moonGlow 3s infinite alternate;
 }
 
-.fireworks-scene {
-  background:
-    radial-gradient(ellipse at 50% 100%, #6b001b 0%, #21000c 45%, #030003 100%);
+@keyframes moonGlow {
+  from { filter: drop-shadow(0 0 10px #ffe9a6); }
+  to { filter: drop-shadow(0 0 35px #fff2bd); }
 }
 
-.fireworks-picture {
+.final-scene {
+  background: radial-gradient(ellipse at center, #5d001a, #080003 80%);
+}
+
+.fireworks-photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .5;
+  opacity: .8;
 }
 
-.final-message {
-  font-size: clamp(26px, 7vw, 48px);
-  color: #fff0a8;
-  text-shadow: 0 0 15px #ff003c, 0 0 35px #ffb700;
-  animation: finalGlow 1.5s infinite alternate;
+.final-text {
+  position: relative;
+  z-index: 2;
+  color: #fff0b0;
+  font-size: clamp(27px, 7vw, 48px);
+  line-height: 1.8;
+  text-shadow: 0 0 15px #ff174d, 0 0 35px #ffb700;
+  animation: finalGlow 1.4s infinite alternate;
 }
 
 @keyframes finalGlow {
-  from { transform: scale(1); opacity: .8; }
-  to { transform: scale(1.05); opacity: 1; }
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
 }
 
-.floating {
+.float-item {
   position: absolute;
   bottom: -60px;
-  z-index: 1;
-  animation: rise 7s linear forwards;
   pointer-events: none;
+  z-index: 1;
+  animation: rise 5s linear forwards;
 }
 
 @keyframes rise {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
   15% { opacity: 1; }
   100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
 }
 
 @media (max-width: 480px) {
   .scene { padding: 15px; }
-  .message { padding: 18px; }
+  .message-box { padding: 18px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- شاشة البداية: لا تدخل في حساب الـ60 ثانية -->
+<!-- شاشة البداية خارج حساب الـ70 ثانية -->
 <section class="scene active" id="startScene">
   <div class="stars"></div>
-  <div class="start-heart">❤️</div>
+  <div class="pulse">❤️</div>
   <h1>هدية خاصة لسمية</h1>
-  <p style="margin: 15px 0 25px">لحظة صغيرة صنعتها لكِ بكل الحب 🌹</p>
-  <button id="startButton" onclick="startBirthday()">اضغطي هنا ❤️</button>
+  <p>لحظة صنعتها لكِ بكل الحب 🌹</p>
+  <button onclick="startBirthday()">اضغطي هنا ❤️</button>
 </section>
 
-<!-- العد التنازلي: 6 ثوانٍ -->
+<!-- 4 ثوانٍ: العد التنازلي -->
 <section class="scene" id="countScene">
   <div class="stars"></div>
   <div class="count-number" id="countNumber">3</div>
 </section>
 
-<!-- مشهد القلب: 7 ثوانٍ -->
+<!-- 7 ثوانٍ: عالم الورود -->
+<section class="scene" id="roseScene">
+  <div class="stars"></div>
+  <div class="rose-row">🌹 ❤️ 🌹</div>
+  <h1>أجمل الأشياء لسمية</h1>
+  <p>لأنكِ تستحقين كل ما هو جميل ✨</p>
+</section>
+
+<!-- 7 ثوانٍ: قلب الحب -->
 <section class="scene" id="heartScene">
   <div class="stars"></div>
   <img
-    class="heart-picture"
+    class="photo heart-photo"
     src="file_0000000069a0820aae929a4a71734128.png"
-    alt="قلب أحمر مكتوب بداخله I love you وسمية"
+    alt="قلب الحب واسم سمية"
   >
 </section>
 
-<!-- مشهد الورود: 7 ثوانٍ -->
-<section class="scene" id="roseScene">
-  <div class="stars"></div>
-  <div>
-    <span class="rose">🌹</span>
-    <span class="rose">❤️</span>
-    <span class="rose">🌹</span>
-  </div>
-  <h1>أجمل الأشياء لسمية ✨</h1>
-  <p>لأنكِ تستحقين كل ما هو جميل في هذا العالم ❤️</p>
-</section>
-
-<!-- عيد الميلاد: 5 ثوانٍ -->
+<!-- 7 ثوانٍ: عيد الميلاد -->
 <section class="scene" id="birthdayScene">
   <div class="stars"></div>
-  <div class="cake">🎂</div>
+  <div class="pulse">🎂</div>
   <h1>عيد ميلاد سعيد سمية ❤️</h1>
   <h2>Happy Birthday to You 🎉</h2>
 </section>
 
-<!-- الرسالة: 5 ثوانٍ -->
+<!-- 14 ثانية: الرسالة الرومانسية -->
 <section class="scene" id="messageScene">
   <div class="stars"></div>
-  <div class="message">
+  <div class="message-box">
     <h2>إلى سمية ❤️</h2>
     <p>
       عيد ميلاد سعيد يا سمية، يا أجمل حب سكن قلبي،
@@ -276,47 +276,41 @@ button {
   </div>
 </section>
 
-<!-- مشهد رومانسي: 10 ثوانٍ -->
+<!-- 12 ثانية: إعلان الحب -->
 <section class="scene" id="loveScene">
   <div class="stars"></div>
-  <div class="start-heart">💗</div>
+  <div class="pulse">💗</div>
   <h1>I LOVE YOU</h1>
   <h2>سمية، أنتِ مميزة ❤️</h2>
-  <p>ابتسامتكِ أجمل من كل نجوم السماء ✨</p>
+  <p>ابتسامتك أجمل من نجوم السماء ✨</p>
 </section>
 
-<!-- مشهد القمر والنجوم: 10 ثوانٍ -->
-<section class="scene" id="starsScene">
+<!-- 8 ثوانٍ: القمر والنجوم -->
+<section class="scene" id="moonScene">
   <div class="stars"></div>
-  <div style="font-size:100px; filter:drop-shadow(0 0 20px gold)">🌙</div>
-  <h1>أنتِ نجمتي المميزة ✨</h1>
+  <div class="moon">🌙</div>
+  <h1>أنتِ نجمتي المميزة</h1>
   <p>حتى في أبعد المسافات، يبقى لكِ مكان خاص في قلبي ❤️</p>
-  <div style="font-size:45px; margin-top:15px">⭐ 💫 ⭐</div>
+  <div style="font-size:42px">⭐ ✨ ⭐</div>
 </section>
 
-<!-- النهاية: 10 ثوانٍ -->
-<section class="scene fireworks-scene" id="finalScene">
+<!-- 11 ثانية: النهاية الكبرى -->
+<section class="scene final-scene" id="finalScene">
   <div class="stars"></div>
 
-  <!-- ارفع صورة الألعاب النارية إلى المستودع وسمّها fireworks.jpg -->
+  <!-- ارفع صورة الألعاب النارية وسمّها fireworks.jpg -->
   <img
-    class="fireworks-picture"
+    class="fireworks-photo"
     src="fireworks.jpg"
     alt=""
     onerror="this.style.display='none'"
   >
 
-  <div class="final-message">
-    🎆 كل عام وأنتِ بخير يا سمية ❤️
-  </div>
-
-  <p style="margin-top:20px">
-    تستحقين الفرح والحب وكل الأشياء الجميلة 🌹
-  </p>
+  <div class="final-text">كل عام وأنتِ بخير يا سمية ❤️</div>
 </section>
 
-<!-- الموسيقى: ضع ملف M4A في المستودع بجانب index.html -->
-<audio id="birthdayMusic" loop preload="auto">
+<!-- الموسيقى الموجودة في مستودع GitHub -->
+<audio id="music" loop preload="auto">
   <source
     src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a"
     type="audio/mp4"
@@ -325,30 +319,27 @@ button {
 
 <script>
 const scenes = [
-  { id: "countScene", duration: 6000 },
-  { id: "heartScene", duration: 7000 },
+  { id: "countScene", duration: 4000 },
   { id: "roseScene", duration: 7000 },
-  { id: "birthdayScene", duration: 5000 },
-  { id: "messageScene", duration: 5000 },
-  { id: "loveScene", duration: 10000 },
-  { id: "starsScene", duration: 10000 },
-  { id: "finalScene", duration: 10000 }
+  { id: "heartScene", duration: 7000 },
+  { id: "birthdayScene", duration: 7000 },
+  { id: "messageScene", duration: 14000 },
+  { id: "loveScene", duration: 12000 },
+  { id: "moonScene", duration: 8000 },
+  { id: "finalScene", duration: 11000 }
 ];
 
 let started = false;
-let currentTimer = null;
-let countInterval = null;
 
 function showScene(id) {
   document.querySelectorAll(".scene").forEach(scene => {
     scene.classList.remove("active");
   });
 
-  const scene = document.getElementById(id);
-  scene.classList.add("active");
+  document.getElementById(id).classList.add("active");
 }
 
-function createFloatingHearts(sceneId) {
+function addFloatingItems(sceneId) {
   const scene = document.getElementById(sceneId);
 
   const interval = setInterval(() => {
@@ -357,53 +348,48 @@ function createFloatingHearts(sceneId) {
       return;
     }
 
-    const heart = document.createElement("div");
-    heart.className = "floating";
-    heart.textContent = ["❤️", "💗", "✨", "🌹"][Math.floor(Math.random() * 4)];
-    heart.style.left = Math.random() * 90 + "%";
-    heart.style.fontSize = (18 + Math.random() * 28) + "px";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    const item = document.createElement("div");
+    item.className = "float-item";
+    item.textContent = ["❤️", "💗", "✨", "🌹"][Math.floor(Math.random() * 4)];
+    item.style.left = Math.random() * 90 + "%";
+    item.style.fontSize = (18 + Math.random() * 25) + "px";
+    item.style.animationDuration = (3 + Math.random() * 3) + "s";
 
-    scene.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 8500);
-  }, 350);
+    scene.appendChild(item);
+    setTimeout(() => item.remove(), 7000);
+  }, 400);
 }
 
 function startBirthday() {
   if (started) return;
   started = true;
 
-  const music = document.getElementById("birthdayMusic");
+  const music = document.getElementById("music");
   music.volume = 0.7;
-
   music.play().catch(() => {
-    console.log("تعذّر تشغيل الموسيقى تلقائيًا. تحقق من اسم الملف وصيغته.");
+    console.log("تحقق من مسار الموسيقى إذا لم تعمل.");
   });
 
-  showScene("countScene");
-  createFloatingHearts("countScene");
-
-  let number = 3;
-  const countNumber = document.getElementById("countNumber");
-  countNumber.textContent = number;
-
-  countInterval = setInterval(() => {
-    number--;
-
-    if (number >= 1) {
-      countNumber.textContent = number;
-
-      // إعادة تشغيل حركة الرقم
-      countNumber.style.animation = "none";
-      void countNumber.offsetWidth;
-      countNumber.style.animation = "numberMove 2s ease-in-out both";
-    } else {
-      clearInterval(countInterval);
-    }
-  }, 2000);
-
   let index = 0;
+  let count = 3;
+  const countElement = document.getElementById("countNumber");
+
+  showScene("countScene");
+  countElement.textContent = count;
+  addFloatingItems("countScene");
+
+  const countTimer = setInterval(() => {
+    count--;
+
+    if (count >= 1) {
+      countElement.textContent = count;
+      countElement.style.animation = "none";
+      void countElement.offsetWidth;
+      countElement.style.animation = "numberMove 1.33s ease-in-out both";
+    } else {
+      clearInterval(countTimer);
+    }
+  }, 1333);
 
   function nextScene() {
     if (index >= scenes.length) {
@@ -411,26 +397,25 @@ function startBirthday() {
       return;
     }
 
-    const item = scenes[index];
-    showScene(item.id);
+    const scene = scenes[index];
+    showScene(scene.id);
 
-    if (["roseScene", "birthdayScene", "messageScene",
-         "loveScene", "starsScene", "finalScene"].includes(item.id)) {
-      createFloatingHearts(item.id);
+    if (scene.id !== "heartScene") {
+      addFloatingItems(scene.id);
     }
 
     index++;
 
     if (index < scenes.length) {
-      currentTimer = setTimeout(nextScene, item.duration);
+      setTimeout(nextScene, scene.duration);
     }
-    // النهاية تبقى ظاهرة بعد انتهاء العرض.
   }
 
-  // يبدأ حساب الـ60 ثانية من العد التنازلي.
+  // بدء احتساب مدة العرض من العد التنازلي.
+  // مجموع مدد المشاهد = 70 ثانية.
   nextScene();
 }
 </script>
 
 </body>
-  </html>
+</html>
