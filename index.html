@@ -2,247 +2,280 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Happy Birthday, Soumia ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:#080307;
+  color:white;
+  font-family:Arial,sans-serif;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #080006;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.scene {
-  position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  padding: 24px;
-  text-align: center;
-  overflow: hidden;
+.scene{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:18px;
+  padding:22px;
+  text-align:center;
+  overflow:hidden;
+  isolation:isolate;
   background:
-    radial-gradient(ellipse at center, #5c001d 0%, #21000c 48%, #050003 100%);
+    radial-gradient(ellipse at 50% 65%,#5c1028 0%,#260710 38%,#050307 100%);
 }
 
-.scene.active {
-  display: flex;
+.scene.active{display:flex}
+
+.scene::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 25%,#a52b42 0,transparent 28%),
+    radial-gradient(circle at 80% 70%,#64152e 0,transparent 30%);
+  animation:atmosphere 12s ease-in-out infinite alternate;
 }
 
-h1 {
-  color: #ff466e;
-  font-size: clamp(28px, 7vw, 48px);
-  text-shadow: 0 0 12px #ff174d, 0 0 35px #bd0037;
-  line-height: 1.6;
+@keyframes atmosphere{
+  from{transform:scale(1) rotate(0);filter:brightness(.7)}
+  to{transform:scale(1.15) rotate(4deg);filter:brightness(1.3)}
 }
 
-h2 {
-  color: #ffe1e8;
-  font-size: clamp(22px, 5vw, 34px);
-  line-height: 1.7;
+h1{
+  font-size:clamp(27px,7vw,48px);
+  color:#ffd5b0;
+  line-height:1.6;
+  text-shadow:0 0 15px #ff244f,0 0 35px #9b102e;
 }
 
-p {
-  font-size: clamp(18px, 4.5vw, 25px);
-  line-height: 1.9;
+h2{
+  font-size:clamp(22px,5vw,34px);
+  color:#ffe2e8;
+  line-height:1.7;
 }
 
-button {
-  border: 1px solid #ff9bb5;
-  border-radius: 40px;
-  padding: 16px 32px;
-  color: white;
-  background: linear-gradient(135deg, #e00045, #55001c);
-  font-size: 22px;
-  box-shadow: 0 0 25px #ff174d;
-  cursor: pointer;
+p{
+  font-size:clamp(18px,4.5vw,25px);
+  line-height:1.9;
 }
 
-.stars {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+button{
+  padding:16px 32px;
+  border:1px solid #ffb1bc;
+  border-radius:50px;
+  color:white;
+  font-size:22px;
+  background:linear-gradient(135deg,#b90c37,#380717);
+  box-shadow:0 0 25px #f22b54;
+  cursor:pointer;
+}
+
+.heart{
+  font-size:100px;
+  filter:drop-shadow(0 0 25px #ff174d);
+  animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.13)}
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
   background-image:
-    radial-gradient(2px 2px at 15% 20%, white 98%, transparent),
-    radial-gradient(2px 2px at 80% 15%, #ffd6e0 98%, transparent),
-    radial-gradient(2px 2px at 65% 70%, white 98%, transparent),
-    radial-gradient(2px 2px at 25% 80%, #ff4c76 98%, transparent),
-    radial-gradient(3px 3px at 90% 55%, white 98%, transparent);
-  background-size: 220px 220px;
-  animation: twinkle 3s infinite alternate;
+    radial-gradient(2px 2px at 10% 20%,white 98%,transparent),
+    radial-gradient(2px 2px at 80% 15%,#ffe8b8 98%,transparent),
+    radial-gradient(2px 2px at 55% 55%,white 98%,transparent),
+    radial-gradient(2px 2px at 25% 85%,#ff637c 98%,transparent),
+    radial-gradient(3px 3px at 90% 75%,white 98%,transparent);
+  background-size:230px 230px;
+  animation:twinkle 3s infinite alternate;
 }
 
-@keyframes twinkle {
-  from { opacity: .35; }
-  to { opacity: 1; }
+@keyframes twinkle{
+  from{opacity:.25}
+  to{opacity:1}
 }
 
-.pulse {
-  font-size: 95px;
-  animation: heartbeat 1.2s infinite;
-  filter: drop-shadow(0 0 22px #ff174d);
+/* العد التنازلي */
+.count{
+  font-size:clamp(110px,35vw,200px);
+  color:#ff405d;
+  font-weight:bold;
+  text-shadow:0 0 25px #ff174d,0 0 70px #ff174d;
+  animation:countMove 1.3s ease both;
 }
 
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.13); }
+@keyframes countMove{
+  0%{opacity:0;transform:translateX(100vw)}
+  25%,75%{opacity:1;transform:translateX(0)}
+  100%{opacity:0;transform:translateX(-100vw)}
 }
 
-.count-number {
-  font-size: clamp(110px, 35vw, 200px);
-  font-weight: bold;
-  color: #ff174d;
-  text-shadow: 0 0 30px #ff174d, 0 0 70px #ff003c;
-  animation: numberMove 1.33s ease-in-out both;
+/* الصور الواقعية */
+.photo{
+  width:min(100%,720px);
+  max-height:78vh;
+  object-fit:contain;
+  border-radius:14px;
+  box-shadow:0 0 30px #a91638;
 }
 
-@keyframes numberMove {
-  0% { opacity: 0; transform: translateX(100vw); }
-  20% { opacity: 1; transform: translateX(0); }
-  80% { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(-100vw); }
+.heart-photo{
+  animation:heartAppear 6s ease both;
 }
 
-.photo {
-  display: block;
-  width: min(100%, 700px);
-  max-height: 78vh;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 0 32px #ff174d;
+@keyframes heartAppear{
+  0%{opacity:0;transform:scale(.3);filter:brightness(.1)}
+  60%{opacity:1;transform:scale(1.05);filter:brightness(1.2)}
+  100%{opacity:1;transform:scale(1);filter:brightness(1)}
 }
 
-.heart-photo {
-  animation: revealHeart 6s ease-in-out both;
+/* الورود */
+.roses{
+  font-size:clamp(48px,13vw,90px);
+  filter:drop-shadow(0 0 15px #a90030);
+  animation:rosesMove 4s ease-in-out infinite alternate;
 }
 
-@keyframes revealHeart {
-  from {
-    opacity: 0;
-    transform: scale(.25);
-    filter: brightness(.1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
+@keyframes rosesMove{
+  from{transform:translateY(12px) scale(.97)}
+  to{transform:translateY(-12px) scale(1.04)}
 }
 
-.rose-row {
-  font-size: clamp(40px, 12vw, 75px);
-  animation: float 2.5s infinite alternate ease-in-out;
-  filter: drop-shadow(0 0 15px #ff174d);
+/* كعكة الميلاد */
+.cake{
+  font-size:clamp(80px,22vw,140px);
+  filter:drop-shadow(0 0 20px #ffc76a);
+  animation:cakeMove 3s ease-in-out infinite alternate;
 }
 
-@keyframes float {
-  from { transform: translateY(10px); }
-  to { transform: translateY(-10px); }
+@keyframes cakeMove{
+  from{transform:translateY(5px)}
+  to{transform:translateY(-8px)}
 }
 
-.message-box {
-  max-width: 850px;
-  padding: 25px;
-  border: 1px solid #b84061;
-  border-radius: 22px;
-  background: rgba(65, 0, 23, .72);
-  box-shadow: 0 0 35px rgba(255, 0, 70, .3);
+/* الرسالة */
+.paper{
+  max-width:850px;
+  padding:26px;
+  border:1px solid #c79a68;
+  border-radius:8px;
+  color:#ffe5bd;
+  background:linear-gradient(135deg,rgba(91,38,33,.94),rgba(30,9,12,.95));
+  box-shadow:0 0 30px #5e1025;
+  animation:paperAppear 2s ease both;
 }
 
-.moon {
-  font-size: 100px;
-  filter: drop-shadow(0 0 25px #ffe9a6);
-  animation: moonGlow 3s infinite alternate;
+@keyframes paperAppear{
+  from{opacity:0;transform:translateY(35px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
-@keyframes moonGlow {
-  from { filter: drop-shadow(0 0 10px #ffe9a6); }
-  to { filter: drop-shadow(0 0 35px #fff2bd); }
+/* القمر */
+.moon{
+  font-size:100px;
+  filter:drop-shadow(0 0 25px #fff0ba);
+  animation:moonMove 5s ease-in-out infinite alternate;
 }
 
-.final-scene {
-  background: radial-gradient(ellipse at center, #5d001a, #080003 80%);
+@keyframes moonMove{
+  from{transform:translateY(8px);filter:drop-shadow(0 0 10px #fff0ba)}
+  to{transform:translateY(-8px);filter:drop-shadow(0 0 35px #fff0ba)}
 }
 
-.fireworks-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .8;
+/* النهاية */
+#finalScene{
+  background:radial-gradient(ellipse at center,#671128,#050207 85%);
 }
 
-.final-text {
-  position: relative;
-  z-index: 2;
-  color: #fff0b0;
-  font-size: clamp(27px, 7vw, 48px);
-  line-height: 1.8;
-  text-shadow: 0 0 15px #ff174d, 0 0 35px #ffb700;
-  animation: finalGlow 1.4s infinite alternate;
+.fireworks-photo{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  animation:fireworksZoom 11s ease-out both;
 }
 
-@keyframes finalGlow {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
+@keyframes fireworksZoom{
+  from{transform:scale(1.15);filter:brightness(.65)}
+  to{transform:scale(1);filter:brightness(1.2)}
 }
 
-.float-item {
-  position: absolute;
-  bottom: -60px;
-  pointer-events: none;
-  z-index: 1;
-  animation: rise 5s linear forwards;
+.final-text{
+  font-size:clamp(28px,7vw,48px);
+  color:#ffe5a1;
+  line-height:1.8;
+  text-shadow:0 0 15px #ff244f,0 0 40px #ffc35c;
+  animation:finalGlow 1.5s infinite alternate;
 }
 
-@keyframes rise {
-  0% { transform: translateY(0) rotate(0); opacity: 0; }
-  15% { opacity: 1; }
-  100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+@keyframes finalGlow{
+  from{transform:scale(1);opacity:.85}
+  to{transform:scale(1.05);opacity:1}
 }
 
-@media (max-width: 480px) {
-  .scene { padding: 15px; }
-  .message-box { padding: 18px; }
+/* بتلات وقلوب متحركة */
+.floating{
+  position:absolute;
+  bottom:-60px;
+  z-index:1;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:1}
+  100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+@media(max-width:480px){
+  .scene{padding:15px}
+  .paper{padding:18px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- شاشة البداية خارج حساب الـ70 ثانية -->
+<!-- البداية: خارج حساب الـ70 ثانية -->
 <section class="scene active" id="startScene">
   <div class="stars"></div>
-  <div class="pulse">❤️</div>
+  <div class="heart">❤️</div>
   <h1>هدية خاصة لسمية</h1>
   <p>لحظة صنعتها لكِ بكل الحب 🌹</p>
-  <button onclick="startBirthday()">اضغطي هنا ❤️</button>
+  <button id="startButton">اضغطي هنا ❤️</button>
 </section>
 
 <!-- 4 ثوانٍ: العد التنازلي -->
 <section class="scene" id="countScene">
   <div class="stars"></div>
-  <div class="count-number" id="countNumber">3</div>
+  <div class="count" id="countNumber">3</div>
 </section>
 
 <!-- 7 ثوانٍ: عالم الورود -->
 <section class="scene" id="roseScene">
   <div class="stars"></div>
-  <div class="rose-row">🌹 ❤️ 🌹</div>
+  <div class="roses">🌹</div>
   <h1>أجمل الأشياء لسمية</h1>
-  <p>لأنكِ تستحقين كل ما هو جميل ✨</p>
+  <p>ورود حمراء تليق بقلبكِ الجميل ❤️</p>
 </section>
 
 <!-- 7 ثوانٍ: قلب الحب -->
@@ -258,15 +291,15 @@ button {
 <!-- 7 ثوانٍ: عيد الميلاد -->
 <section class="scene" id="birthdayScene">
   <div class="stars"></div>
-  <div class="pulse">🎂</div>
+  <div class="cake">🎂</div>
   <h1>عيد ميلاد سعيد سمية ❤️</h1>
-  <h2>Happy Birthday to You 🎉</h2>
+  <h2>Happy Birthday to You</h2>
 </section>
 
 <!-- 14 ثانية: الرسالة الرومانسية -->
 <section class="scene" id="messageScene">
   <div class="stars"></div>
-  <div class="message-box">
+  <div class="paper">
     <h2>إلى سمية ❤️</h2>
     <p>
       عيد ميلاد سعيد يا سمية، يا أجمل حب سكن قلبي،
@@ -279,37 +312,33 @@ button {
 <!-- 12 ثانية: إعلان الحب -->
 <section class="scene" id="loveScene">
   <div class="stars"></div>
-  <div class="pulse">💗</div>
+  <div class="heart">❤️</div>
   <h1>I LOVE YOU</h1>
-  <h2>سمية، أنتِ مميزة ❤️</h2>
-  <p>ابتسامتك أجمل من نجوم السماء ✨</p>
+  <h2>سمية ❤️</h2>
+  <p>أنتِ مميزة، وابتسامتك أجمل من النجوم ✨</p>
 </section>
 
 <!-- 8 ثوانٍ: القمر والنجوم -->
 <section class="scene" id="moonScene">
   <div class="stars"></div>
   <div class="moon">🌙</div>
-  <h1>أنتِ نجمتي المميزة</h1>
-  <p>حتى في أبعد المسافات، يبقى لكِ مكان خاص في قلبي ❤️</p>
-  <div style="font-size:42px">⭐ ✨ ⭐</div>
+  <h1>حتى في أبعد المسافات،</h1>
+  <p>يبقى لكِ مكان خاص في قلبي ❤️</p>
+  <p>⭐ ✨ ⭐</p>
 </section>
 
 <!-- 11 ثانية: النهاية الكبرى -->
-<section class="scene final-scene" id="finalScene">
+<section class="scene" id="finalScene">
   <div class="stars"></div>
-
-  <!-- ارفع صورة الألعاب النارية وسمّها fireworks.jpg -->
   <img
     class="fireworks-photo"
     src="fireworks.jpg"
     alt=""
     onerror="this.style.display='none'"
   >
-
   <div class="final-text">كل عام وأنتِ بخير يا سمية ❤️</div>
 </section>
 
-<!-- الموسيقى الموجودة في مستودع GitHub -->
 <audio id="music" loop preload="auto">
   <source
     src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a"
@@ -319,103 +348,99 @@ button {
 
 <script>
 const scenes = [
-  { id: "countScene", duration: 4000 },
-  { id: "roseScene", duration: 7000 },
-  { id: "heartScene", duration: 7000 },
-  { id: "birthdayScene", duration: 7000 },
-  { id: "messageScene", duration: 14000 },
-  { id: "loveScene", duration: 12000 },
-  { id: "moonScene", duration: 8000 },
-  { id: "finalScene", duration: 11000 }
+  {id:"countScene",duration:4000},
+  {id:"roseScene",duration:7000},
+  {id:"heartScene",duration:7000},
+  {id:"birthdayScene",duration:7000},
+  {id:"messageScene",duration:14000},
+  {id:"loveScene",duration:12000},
+  {id:"moonScene",duration:8000},
+  {id:"finalScene",duration:11000}
 ];
 
 let started = false;
+let activeFloating = null;
 
-function showScene(id) {
-  document.querySelectorAll(".scene").forEach(scene => {
+function showScene(id){
+  document.querySelectorAll(".scene").forEach(scene=>{
     scene.classList.remove("active");
   });
-
   document.getElementById(id).classList.add("active");
 }
 
-function addFloatingItems(sceneId) {
-  const scene = document.getElementById(sceneId);
+function floatEffects(sceneId){
+  if(activeFloating) clearInterval(activeFloating);
 
-  const interval = setInterval(() => {
-    if (!scene.classList.contains("active")) {
-      clearInterval(interval);
+  const scene=document.getElementById(sceneId);
+  activeFloating=setInterval(()=>{
+    if(!scene.classList.contains("active")){
+      clearInterval(activeFloating);
+      activeFloating=null;
       return;
     }
 
-    const item = document.createElement("div");
-    item.className = "float-item";
-    item.textContent = ["❤️", "💗", "✨", "🌹"][Math.floor(Math.random() * 4)];
-    item.style.left = Math.random() * 90 + "%";
-    item.style.fontSize = (18 + Math.random() * 25) + "px";
-    item.style.animationDuration = (3 + Math.random() * 3) + "s";
-
+    const item=document.createElement("span");
+    item.className="floating";
+    item.textContent=["❤️","🌹","✨","💗"][Math.floor(Math.random()*4)];
+    item.style.left=Math.random()*92+"%";
+    item.style.fontSize=(18+Math.random()*25)+"px";
+    item.style.animationDuration=(4+Math.random()*3)+"s";
     scene.appendChild(item);
-    setTimeout(() => item.remove(), 7000);
-  }, 400);
+    setTimeout(()=>item.remove(),7500);
+  },400);
 }
 
-function startBirthday() {
-  if (started) return;
-  started = true;
+function startBirthday(){
+  if(started) return;
+  started=true;
 
-  const music = document.getElementById("music");
-  music.volume = 0.7;
-  music.play().catch(() => {
-    console.log("تحقق من مسار الموسيقى إذا لم تعمل.");
+  const music=document.getElementById("music");
+  music.volume=.7;
+  music.play().catch(()=>{
+    alert("إذا لم تعمل الموسيقى، تحقق من اسم الملف في GitHub.");
   });
 
-  let index = 0;
-  let count = 3;
-  const countElement = document.getElementById("countNumber");
+  let index=0;
+  let count=3;
+  const countElement=document.getElementById("countNumber");
 
-  showScene("countScene");
-  countElement.textContent = count;
-  addFloatingItems("countScene");
+  function nextScene(){
+    const current=scenes[index];
+    showScene(current.id);
+    floatEffects(current.id);
 
-  const countTimer = setInterval(() => {
-    count--;
+    if(current.id==="countScene"){
+      count=3;
+      countElement.textContent=count;
 
-    if (count >= 1) {
-      countElement.textContent = count;
-      countElement.style.animation = "none";
-      void countElement.offsetWidth;
-      countElement.style.animation = "numberMove 1.33s ease-in-out both";
-    } else {
-      clearInterval(countTimer);
-    }
-  }, 1333);
-
-  function nextScene() {
-    if (index >= scenes.length) {
-      showScene("finalScene");
-      return;
-    }
-
-    const scene = scenes[index];
-    showScene(scene.id);
-
-    if (scene.id !== "heartScene") {
-      addFloatingItems(scene.id);
+      const counter=setInterval(()=>{
+        count--;
+        if(count>=1){
+          countElement.style.animation="none";
+          void countElement.offsetWidth;
+          countElement.textContent=count;
+          countElement.style.animation="countMove 1.3s ease both";
+        }else{
+          clearInterval(counter);
+        }
+      },1333);
     }
 
     index++;
 
-    if (index < scenes.length) {
-      setTimeout(nextScene, scene.duration);
+    if(index<scenes.length){
+      setTimeout(nextScene,current.duration);
+    }else{
+      // النهاية تبقى ظاهرة بعد انتهاء الـ70 ثانية.
+      floatEffects("finalScene");
     }
   }
 
-  // بدء احتساب مدة العرض من العد التنازلي.
-  // مجموع مدد المشاهد = 70 ثانية.
   nextScene();
 }
+
+document.getElementById("startButton").addEventListener("click",startBirthday);
 </script>
 
 </body>
-</html>
+    </html>
