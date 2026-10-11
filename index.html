@@ -2,100 +2,58 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Happy Birthday, Soumia ❤️</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
 html,body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  background:#080307;
-  color:white;
+  width:100%;height:100%;overflow:hidden;
+  background:#090307;color:white;
   font-family:Arial,sans-serif;
 }
 
 .scene{
-  position:absolute;
-  inset:0;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:18px;
-  padding:22px;
-  text-align:center;
-  overflow:hidden;
+  position:absolute;inset:0;display:none;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:16px;padding:22px;
+  overflow:hidden;text-align:center;
+  background:radial-gradient(ellipse at 50% 65%,#64132b,#210711 55%,#050205);
   isolation:isolate;
-  background:
-    radial-gradient(ellipse at 50% 65%,#5c1028 0%,#260710 38%,#050307 100%);
 }
 
 .scene.active{display:flex}
 
 .scene::before{
-  content:"";
-  position:absolute;
-  inset:-20%;
-  z-index:-1;
+  content:"";position:absolute;inset:-20%;z-index:-2;
   background:
-    radial-gradient(circle at 20% 25%,#a52b42 0,transparent 28%),
-    radial-gradient(circle at 80% 70%,#64152e 0,transparent 30%);
-  animation:atmosphere 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 30%,#b22b48,transparent 32%),
+    radial-gradient(circle at 80% 70%,#64142f,transparent 35%);
+  animation:atmosphere 9s ease-in-out infinite alternate;
 }
 
 @keyframes atmosphere{
   from{transform:scale(1) rotate(0);filter:brightness(.7)}
-  to{transform:scale(1.15) rotate(4deg);filter:brightness(1.3)}
+  to{transform:scale(1.15) rotate(4deg);filter:brightness(1.25)}
 }
 
 h1{
-  font-size:clamp(27px,7vw,48px);
-  color:#ffd5b0;
-  line-height:1.6;
-  text-shadow:0 0 15px #ff244f,0 0 35px #9b102e;
+  color:#ffe0b6;font-size:clamp(27px,7vw,48px);
+  line-height:1.6;text-shadow:0 0 15px #ff244f,0 0 35px #b90b36;
 }
-
-h2{
-  font-size:clamp(22px,5vw,34px);
-  color:#ffe2e8;
-  line-height:1.7;
-}
-
-p{
-  font-size:clamp(18px,4.5vw,25px);
-  line-height:1.9;
-}
+h2{font-size:clamp(22px,5vw,34px);color:#ffe2e8;line-height:1.7}
+p{font-size:clamp(18px,4.5vw,25px);line-height:1.9}
 
 button{
-  padding:16px 32px;
-  border:1px solid #ffb1bc;
-  border-radius:50px;
-  color:white;
-  font-size:22px;
+  padding:16px 32px;border:1px solid #ffb1bc;border-radius:50px;
+  color:white;font-size:22px;
   background:linear-gradient(135deg,#b90c37,#380717);
-  box-shadow:0 0 25px #f22b54;
-  cursor:pointer;
-}
-
-.heart{
-  font-size:100px;
-  filter:drop-shadow(0 0 25px #ff174d);
-  animation:heartbeat 1.2s infinite;
-}
-
-@keyframes heartbeat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.13)}
+  box-shadow:0 0 25px #f22b54;cursor:pointer;
 }
 
 .stars{
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
   background-image:
     radial-gradient(2px 2px at 10% 20%,white 98%,transparent),
     radial-gradient(2px 2px at 80% 15%,#ffe8b8 98%,transparent),
@@ -105,141 +63,109 @@ button{
   background-size:230px 230px;
   animation:twinkle 3s infinite alternate;
 }
+@keyframes twinkle{from{opacity:.25}to{opacity:1}}
 
-@keyframes twinkle{
-  from{opacity:.25}
-  to{opacity:1}
+.heart{
+  font-size:100px;filter:drop-shadow(0 0 25px #ff174d);
+  animation:heartbeat 1.2s infinite;
+}
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.13)}
 }
 
-/* العد التنازلي */
 .count{
-  font-size:clamp(110px,35vw,200px);
-  color:#ff405d;
-  font-weight:bold;
-  text-shadow:0 0 25px #ff174d,0 0 70px #ff174d;
+  font-size:clamp(110px,35vw,200px);font-weight:bold;
+  color:#ff405d;text-shadow:0 0 25px #ff174d,0 0 70px #ff174d;
   animation:countMove 1.3s ease both;
 }
-
 @keyframes countMove{
   0%{opacity:0;transform:translateX(100vw)}
   25%,75%{opacity:1;transform:translateX(0)}
   100%{opacity:0;transform:translateX(-100vw)}
 }
 
-/* الصور الواقعية */
 .photo{
-  width:min(100%,720px);
-  max-height:78vh;
-  object-fit:contain;
-  border-radius:14px;
+  width:min(100%,720px);max-height:78vh;
+  object-fit:contain;border-radius:14px;
   box-shadow:0 0 30px #a91638;
 }
-
-.heart-photo{
-  animation:heartAppear 6s ease both;
+.scene-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  max-height:none;object-fit:cover;z-index:-1;
+  animation:photoMove 9s ease-in-out both;
+}
+@keyframes photoMove{
+  from{transform:scale(1.15);filter:brightness(.55)}
+  to{transform:scale(1);filter:brightness(.95)}
 }
 
+.heart-photo{animation:heartAppear 6s ease both}
 @keyframes heartAppear{
   0%{opacity:0;transform:scale(.3);filter:brightness(.1)}
   60%{opacity:1;transform:scale(1.05);filter:brightness(1.2)}
   100%{opacity:1;transform:scale(1);filter:brightness(1)}
 }
 
-/* الورود */
 .roses{
   font-size:clamp(48px,13vw,90px);
   filter:drop-shadow(0 0 15px #a90030);
   animation:rosesMove 4s ease-in-out infinite alternate;
 }
-
 @keyframes rosesMove{
   from{transform:translateY(12px) scale(.97)}
   to{transform:translateY(-12px) scale(1.04)}
 }
 
-/* كعكة الميلاد */
 .cake{
   font-size:clamp(80px,22vw,140px);
   filter:drop-shadow(0 0 20px #ffc76a);
   animation:cakeMove 3s ease-in-out infinite alternate;
 }
-
 @keyframes cakeMove{
   from{transform:translateY(5px)}
   to{transform:translateY(-8px)}
 }
 
-/* الرسالة */
 .paper{
-  max-width:850px;
-  padding:26px;
-  border:1px solid #c79a68;
-  border-radius:8px;
-  color:#ffe5bd;
+  max-width:850px;padding:26px;border:1px solid #c79a68;
+  border-radius:8px;color:#ffe5bd;
   background:linear-gradient(135deg,rgba(91,38,33,.94),rgba(30,9,12,.95));
   box-shadow:0 0 30px #5e1025;
   animation:paperAppear 2s ease both;
 }
-
 @keyframes paperAppear{
   from{opacity:0;transform:translateY(35px) scale(.95)}
   to{opacity:1;transform:translateY(0) scale(1)}
 }
 
-/* القمر */
 .moon{
-  font-size:100px;
-  filter:drop-shadow(0 0 25px #fff0ba);
+  font-size:100px;filter:drop-shadow(0 0 25px #fff0ba);
   animation:moonMove 5s ease-in-out infinite alternate;
 }
-
 @keyframes moonMove{
   from{transform:translateY(8px);filter:drop-shadow(0 0 10px #fff0ba)}
   to{transform:translateY(-8px);filter:drop-shadow(0 0 35px #fff0ba)}
 }
 
-/* النهاية */
 #finalScene{
   background:radial-gradient(ellipse at center,#671128,#050207 85%);
 }
-
-.fireworks-photo{
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  animation:fireworksZoom 11s ease-out both;
-}
-
-@keyframes fireworksZoom{
-  from{transform:scale(1.15);filter:brightness(.65)}
-  to{transform:scale(1);filter:brightness(1.2)}
-}
-
 .final-text{
-  font-size:clamp(28px,7vw,48px);
-  color:#ffe5a1;
-  line-height:1.8;
+  position:relative;z-index:2;color:#ffe5a1;
+  font-size:clamp(28px,7vw,48px);line-height:1.8;
   text-shadow:0 0 15px #ff244f,0 0 40px #ffc35c;
   animation:finalGlow 1.5s infinite alternate;
 }
-
 @keyframes finalGlow{
   from{transform:scale(1);opacity:.85}
   to{transform:scale(1.05);opacity:1}
 }
 
-/* بتلات وقلوب متحركة */
 .floating{
-  position:absolute;
-  bottom:-60px;
-  z-index:1;
-  pointer-events:none;
-  animation:floatUp linear forwards;
+  position:absolute;bottom:-60px;z-index:3;
+  pointer-events:none;animation:floatUp linear forwards;
 }
-
 @keyframes floatUp{
   0%{transform:translateY(0) rotate(0);opacity:0}
   15%{opacity:1}
@@ -255,7 +181,7 @@ button{
 
 <body>
 
-<!-- البداية: خارج حساب الـ70 ثانية -->
+<!-- شاشة البداية: خارج حساب الـ70 ثانية -->
 <section class="scene active" id="startScene">
   <div class="stars"></div>
   <div class="heart">❤️</div>
@@ -264,41 +190,40 @@ button{
   <button id="startButton">اضغطي هنا ❤️</button>
 </section>
 
-<!-- 4 ثوانٍ: العد التنازلي -->
+<!-- العد التنازلي: 4 ثوانٍ -->
 <section class="scene" id="countScene">
   <div class="stars"></div>
   <div class="count" id="countNumber">3</div>
 </section>
 
-<!-- 7 ثوانٍ: عالم الورود -->
+<!-- عالم الورود: 7 ثوانٍ -->
 <section class="scene" id="roseScene">
   <div class="stars"></div>
-  <div class="roses">🌹</div>
-  <h1>أجمل الأشياء لسمية</h1>
-  <p>ورود حمراء تليق بقلبكِ الجميل ❤️</p>
+  <img class="scene-photo" src="IMG_20261010_234256.jpg" alt="">
+  <h1>أجمل الأشياء لسمية 🌹</h1>
+  <p>كل وردة تحمل لكِ حبًا ❤️</p>
 </section>
 
-<!-- 7 ثوانٍ: قلب الحب -->
+<!-- قلب الحب: 7 ثوانٍ -->
 <section class="scene" id="heartScene">
   <div class="stars"></div>
-  <img
-    class="photo heart-photo"
-    src="file_0000000069a0820aae929a4a71734128.png"
-    alt="قلب الحب واسم سمية"
-  >
+  <img class="photo heart-photo"
+       src="file_0000000069a0820aae929a4a71734128.png"
+       alt="قلب الحب واسم سمية">
 </section>
 
-<!-- 7 ثوانٍ: عيد الميلاد -->
+<!-- عيد الميلاد: 7 ثوانٍ -->
 <section class="scene" id="birthdayScene">
   <div class="stars"></div>
-  <div class="cake">🎂</div>
+  <img class="scene-photo" src="IMG_20261010_234325.jpg" alt="">
   <h1>عيد ميلاد سعيد سمية ❤️</h1>
-  <h2>Happy Birthday to You</h2>
+  <h2>Happy Birthday to You 🎉</h2>
 </section>
 
-<!-- 14 ثانية: الرسالة الرومانسية -->
+<!-- الرسالة الرومانسية: 14 ثانية -->
 <section class="scene" id="messageScene">
   <div class="stars"></div>
+  <img class="scene-photo" src="IMG_20261010_234340.jpg" alt="">
   <div class="paper">
     <h2>إلى سمية ❤️</h2>
     <p>
@@ -309,16 +234,16 @@ button{
   </div>
 </section>
 
-<!-- 12 ثانية: إعلان الحب -->
+<!-- إعلان الحب: 12 ثانية -->
 <section class="scene" id="loveScene">
   <div class="stars"></div>
-  <div class="heart">❤️</div>
+  <img class="scene-photo" src="IMG_20261010_234359.jpg" alt="">
   <h1>I LOVE YOU</h1>
   <h2>سمية ❤️</h2>
   <p>أنتِ مميزة، وابتسامتك أجمل من النجوم ✨</p>
 </section>
 
-<!-- 8 ثوانٍ: القمر والنجوم -->
+<!-- القمر والنجوم: 8 ثوانٍ -->
 <section class="scene" id="moonScene">
   <div class="stars"></div>
   <div class="moon">🌙</div>
@@ -327,23 +252,19 @@ button{
   <p>⭐ ✨ ⭐</p>
 </section>
 
-<!-- 11 ثانية: النهاية الكبرى -->
+<!-- النهاية الكبرى: 11 ثانية -->
 <section class="scene" id="finalScene">
   <div class="stars"></div>
-  <img
-    class="fireworks-photo"
-    src="fireworks.jpg"
-    alt=""
-    onerror="this.style.display='none'"
-  >
+  <img class="scene-photo"
+       src="IMG_20261010_234506.png"
+       alt="">
   <div class="final-text">كل عام وأنتِ بخير يا سمية ❤️</div>
 </section>
 
 <audio id="music" loop preload="auto">
   <source
     src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a"
-    type="audio/mp4"
-  >
+    type="audio/mp4">
 </audio>
 
 <script>
@@ -358,8 +279,8 @@ const scenes = [
   {id:"finalScene",duration:11000}
 ];
 
-let started = false;
-let activeFloating = null;
+let started=false;
+let activeFloating=null;
 
 function showScene(id){
   document.querySelectorAll(".scene").forEach(scene=>{
@@ -370,8 +291,8 @@ function showScene(id){
 
 function floatEffects(sceneId){
   if(activeFloating) clearInterval(activeFloating);
-
   const scene=document.getElementById(sceneId);
+
   activeFloating=setInterval(()=>{
     if(!scene.classList.contains("active")){
       clearInterval(activeFloating);
@@ -397,7 +318,7 @@ function startBirthday(){
   const music=document.getElementById("music");
   music.volume=.7;
   music.play().catch(()=>{
-    alert("إذا لم تعمل الموسيقى، تحقق من اسم الملف في GitHub.");
+    console.log("تحقق من اسم ملف الموسيقى إذا لم تعمل.");
   });
 
   let index=0;
@@ -431,7 +352,7 @@ function startBirthday(){
     if(index<scenes.length){
       setTimeout(nextScene,current.duration);
     }else{
-      // النهاية تبقى ظاهرة بعد انتهاء الـ70 ثانية.
+      // تبقى النهاية ظاهرة بعد اكتمال العرض.
       floatEffects("finalScene");
     }
   }
@@ -439,8 +360,9 @@ function startBirthday(){
   nextScene();
 }
 
-document.getElementById("startButton").addEventListener("click",startBirthday);
+document.getElementById("startButton")
+  .addEventListener("click",startBirthday);
 </script>
 
 </body>
-    </html>
+</html>
