@@ -2,367 +2,609 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday, Soumia ❤️</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-html,body{
-  width:100%;height:100%;overflow:hidden;
-  background:#090307;color:white;
-  font-family:Arial,sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.scene{
-  position:absolute;inset:0;display:none;
-  align-items:center;justify-content:center;
-  flex-direction:column;gap:16px;padding:22px;
-  overflow:hidden;text-align:center;
-  background:radial-gradient(ellipse at 50% 65%,#64132b,#210711 55%,#050205);
-  isolation:isolate;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.scene.active{display:flex}
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #080307;
+}
 
-.scene::before{
-  content:"";position:absolute;inset:-20%;z-index:-2;
+.scene {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px;
+  text-align: center;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 20% 30%,#b22b48,transparent 32%),
-    radial-gradient(circle at 80% 70%,#64142f,transparent 35%);
-  animation:atmosphere 9s ease-in-out infinite alternate;
+    radial-gradient(ellipse at center, #501225, #200813 55%, #050307);
 }
 
-@keyframes atmosphere{
-  from{transform:scale(1) rotate(0);filter:brightness(.7)}
-  to{transform:scale(1.15) rotate(4deg);filter:brightness(1.25)}
+.scene.active {
+  display: flex;
+  animation: reveal 1s ease both;
 }
 
-h1{
-  color:#ffe0b6;font-size:clamp(27px,7vw,48px);
-  line-height:1.6;text-shadow:0 0 15px #ff244f,0 0 35px #b90b36;
-}
-h2{font-size:clamp(22px,5vw,34px);color:#ffe2e8;line-height:1.7}
-p{font-size:clamp(18px,4.5vw,25px);line-height:1.9}
-
-button{
-  padding:16px 32px;border:1px solid #ffb1bc;border-radius:50px;
-  color:white;font-size:22px;
-  background:linear-gradient(135deg,#b90c37,#380717);
-  box-shadow:0 0 25px #f22b54;cursor:pointer;
-}
-
-.stars{
-  position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:
-    radial-gradient(2px 2px at 10% 20%,white 98%,transparent),
-    radial-gradient(2px 2px at 80% 15%,#ffe8b8 98%,transparent),
-    radial-gradient(2px 2px at 55% 55%,white 98%,transparent),
-    radial-gradient(2px 2px at 25% 85%,#ff637c 98%,transparent),
-    radial-gradient(3px 3px at 90% 75%,white 98%,transparent);
-  background-size:230px 230px;
-  animation:twinkle 3s infinite alternate;
-}
-@keyframes twinkle{from{opacity:.25}to{opacity:1}}
-
-.heart{
-  font-size:100px;filter:drop-shadow(0 0 25px #ff174d);
-  animation:heartbeat 1.2s infinite;
-}
-@keyframes heartbeat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.13)}
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 220, 230, .09) 50%,
+    transparent 60%
+  );
+  animation: lightSweep 7s linear infinite;
 }
 
-.count{
-  font-size:clamp(110px,35vw,200px);font-weight:bold;
-  color:#ff405d;text-shadow:0 0 25px #ff174d,0 0 70px #ff174d;
-  animation:countMove 1.3s ease both;
-}
-@keyframes countMove{
-  0%{opacity:0;transform:translateX(100vw)}
-  25%,75%{opacity:1;transform:translateX(0)}
-  100%{opacity:0;transform:translateX(-100vw)}
-}
-
-.photo{
-  width:min(100%,720px);max-height:78vh;
-  object-fit:contain;border-radius:14px;
-  box-shadow:0 0 30px #a91638;
-}
-.scene-photo{
-  position:absolute;inset:0;width:100%;height:100%;
-  max-height:none;object-fit:cover;z-index:-1;
-  animation:photoMove 9s ease-in-out both;
-}
-@keyframes photoMove{
-  from{transform:scale(1.15);filter:brightness(.55)}
-  to{transform:scale(1);filter:brightness(.95)}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
 
-.heart-photo{animation:heartAppear 6s ease both}
-@keyframes heartAppear{
-  0%{opacity:0;transform:scale(.3);filter:brightness(.1)}
-  60%{opacity:1;transform:scale(1.05);filter:brightness(1.2)}
-  100%{opacity:1;transform:scale(1);filter:brightness(1)}
+@keyframes lightSweep {
+  from { transform: translateX(-25%) rotate(10deg); }
+  to { transform: translateX(25%) rotate(10deg); }
 }
 
-.roses{
-  font-size:clamp(48px,13vw,90px);
-  filter:drop-shadow(0 0 15px #a90030);
-  animation:rosesMove 4s ease-in-out infinite alternate;
-}
-@keyframes rosesMove{
-  from{transform:translateY(12px) scale(.97)}
-  to{transform:translateY(-12px) scale(1.04)}
+h1 {
+  font-size: clamp(30px, 7vw, 62px);
+  color: #fff0f4;
+  text-shadow: 0 0 15px #ff174f, 0 0 35px #a30e39;
+  position: relative;
+  z-index: 2;
 }
 
-.cake{
-  font-size:clamp(80px,22vw,140px);
-  filter:drop-shadow(0 0 20px #ffc76a);
-  animation:cakeMove 3s ease-in-out infinite alternate;
-}
-@keyframes cakeMove{
-  from{transform:translateY(5px)}
-  to{transform:translateY(-8px)}
+h2 {
+  font-size: clamp(23px, 5vw, 40px);
+  color: #ffd3df;
+  text-shadow: 0 0 15px rgba(255, 25, 85, .7);
+  position: relative;
+  z-index: 2;
 }
 
-.paper{
-  max-width:850px;padding:26px;border:1px solid #c79a68;
-  border-radius:8px;color:#ffe5bd;
-  background:linear-gradient(135deg,rgba(91,38,33,.94),rgba(30,9,12,.95));
-  box-shadow:0 0 30px #5e1025;
-  animation:paperAppear 2s ease both;
-}
-@keyframes paperAppear{
-  from{opacity:0;transform:translateY(35px) scale(.95)}
-  to{opacity:1;transform:translateY(0) scale(1)}
+p {
+  font-size: clamp(17px, 3.8vw, 25px);
+  line-height: 1.9;
+  max-width: 700px;
+  color: #ffe6ed;
+  position: relative;
+  z-index: 2;
 }
 
-.moon{
-  font-size:100px;filter:drop-shadow(0 0 25px #fff0ba);
-  animation:moonMove 5s ease-in-out infinite alternate;
-}
-@keyframes moonMove{
-  from{transform:translateY(8px);filter:drop-shadow(0 0 10px #fff0ba)}
-  to{transform:translateY(-8px);filter:drop-shadow(0 0 35px #fff0ba)}
+.gold {
+  color: #e8c58a;
+  text-shadow: 0 0 15px #d8a74f;
 }
 
-#finalScene{
-  background:radial-gradient(ellipse at center,#671128,#050207 85%);
-}
-.final-text{
-  position:relative;z-index:2;color:#ffe5a1;
-  font-size:clamp(28px,7vw,48px);line-height:1.8;
-  text-shadow:0 0 15px #ff244f,0 0 40px #ffc35c;
-  animation:finalGlow 1.5s infinite alternate;
-}
-@keyframes finalGlow{
-  from{transform:scale(1);opacity:.85}
-  to{transform:scale(1.05);opacity:1}
-}
-
-.floating{
-  position:absolute;bottom:-60px;z-index:3;
-  pointer-events:none;animation:floatUp linear forwards;
-}
-@keyframes floatUp{
-  0%{transform:translateY(0) rotate(0);opacity:0}
-  15%{opacity:1}
-  100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+.start-card {
+  width: min(92vw, 440px);
+  padding: 25px 18px;
+  border: 1px solid rgba(255, 190, 210, .8);
+  border-radius: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(100, 13, 42, .92),
+    rgba(18, 4, 12, .97)
+  );
+  box-shadow:
+    0 0 35px rgba(255, 20, 80, .45),
+    inset 0 0 30px rgba(255, 255, 255, .04);
+  position: relative;
+  z-index: 3;
+  animation: cardFloat 4s ease-in-out infinite;
 }
 
-@media(max-width:480px){
-  .scene{padding:15px}
-  .paper{padding:18px}
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.big-heart {
+  color: #ff164f;
+  font-size: clamp(100px, 25vw, 190px);
+  line-height: 1;
+  filter: drop-shadow(0 0 22px #ff174f);
+  animation: heartbeat 1.2s infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.start-button {
+  border: 1px solid #ffd2de;
+  border-radius: 50px;
+  padding: 15px 35px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f62d5e, #8b1037);
+  box-shadow: 0 0 25px rgba(255, 30, 90, .55);
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.start-button:active {
+  transform: scale(.96);
+}
+
+.scene-photo {
+  display: block;
+  width: min(78vw, 360px);
+  max-height: 40vh;
+  object-fit: contain;
+  border: 1px solid rgba(255, 210, 225, .65);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255, 30, 85, .4);
+  position: relative;
+  z-index: 2;
+  animation: photoReveal 1.5s ease both;
+}
+
+.scene-photo.wide {
+  width: min(88vw, 550px);
+  max-height: 45vh;
+}
+
+@keyframes photoReveal {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.count-number {
+  font-family: Georgia, serif;
+  font-size: clamp(120px, 40vw, 250px);
+  color: white;
+  text-shadow: 0 0 30px #ff174f;
+  animation: countIn 1.8s ease both;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes countIn {
+  0% { opacity: 0; transform: scale(1.7); }
+  25%, 75% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(.7); }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: #fff4d4;
+  text-shadow: 0 0 12px white;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+.particle {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp var(--duration, 7s) linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: .9; }
+  90% { opacity: .8; }
+  to {
+    transform: translateY(-115vh) rotate(300deg);
+    opacity: 0;
+  }
+}
+
+.firework {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffd28c;
+  box-shadow:
+    0 0 12px 4px #ff4c7a,
+    0 0 25px 8px #a91c53;
+  animation: burst 2s ease-out infinite;
+}
+
+@keyframes burst {
+  0% { opacity: 0; transform: scale(.1); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: scale(12); }
+}
+
+.love-words {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: 3%;
+  right: 3%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  color: rgba(255, 180, 200, .65);
+  font-size: 12px;
+  letter-spacing: 3px;
+  writing-mode: vertical-rl;
+  z-index: 1;
+}
+
+.small-note {
+  font-size: 14px;
+  opacity: .8;
+}
+
+#scene12 {
+  background:
+    radial-gradient(ellipse at center, #65132e, #210711 60%, #030204);
+}
+
+@media (max-height: 650px) {
+  .scene {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .scene-photo {
+    max-height: 30vh;
+  }
+
+  .scene-photo.wide {
+    max-height: 35vh;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- شاشة البداية: خارج حساب الـ70 ثانية -->
-<section class="scene active" id="startScene">
-  <div class="stars"></div>
-  <div class="heart">❤️</div>
-  <h1>هدية خاصة لسمية</h1>
-  <p>لحظة صنعتها لكِ بكل الحب 🌹</p>
-  <button id="startButton">اضغطي هنا ❤️</button>
-</section>
-
-<!-- العد التنازلي: 4 ثوانٍ -->
-<section class="scene" id="countScene">
-  <div class="stars"></div>
-  <div class="count" id="countNumber">3</div>
-</section>
-
-<!-- عالم الورود: 7 ثوانٍ -->
-<section class="scene" id="roseScene">
-  <div class="stars"></div>
-  <img class="scene-photo" src="IMG_20261010_234256.jpg" alt="">
-  <h1>أجمل الأشياء لسمية 🌹</h1>
-  <p>كل وردة تحمل لكِ حبًا ❤️</p>
-</section>
-
-<!-- قلب الحب: 7 ثوانٍ -->
-<section class="scene" id="heartScene">
-  <div class="stars"></div>
-  <img class="photo heart-photo"
-       src="file_0000000069a0820aae929a4a71734128.png"
-       alt="قلب الحب واسم سمية">
-</section>
-
-<!-- عيد الميلاد: 7 ثوانٍ -->
-<section class="scene" id="birthdayScene">
-  <div class="stars"></div>
-  <img class="scene-photo" src="IMG_20261010_234325.jpg" alt="">
-  <h1>عيد ميلاد سعيد سمية ❤️</h1>
-  <h2>Happy Birthday to You 🎉</h2>
-</section>
-
-<!-- الرسالة الرومانسية: 14 ثانية -->
-<section class="scene" id="messageScene">
-  <div class="stars"></div>
-  <img class="scene-photo" src="IMG_20261010_234340.jpg" alt="">
-  <div class="paper">
-    <h2>إلى سمية ❤️</h2>
-    <p>
-      عيد ميلاد سعيد يا سمية، يا أجمل حب سكن قلبي،
-      كنبغيك ونتمنى تبقاي ليا فرحة العمر ونور أيامي.
-      ❤️🎂🌹
-    </p>
-  </div>
-</section>
-
-<!-- إعلان الحب: 12 ثانية -->
-<section class="scene" id="loveScene">
-  <div class="stars"></div>
-  <img class="scene-photo" src="IMG_20261010_234359.jpg" alt="">
-  <h1>I LOVE YOU</h1>
-  <h2>سمية ❤️</h2>
-  <p>أنتِ مميزة، وابتسامتك أجمل من النجوم ✨</p>
-</section>
-
-<!-- القمر والنجوم: 8 ثوانٍ -->
-<section class="scene" id="moonScene">
-  <div class="stars"></div>
-  <div class="moon">🌙</div>
-  <h1>حتى في أبعد المسافات،</h1>
-  <p>يبقى لكِ مكان خاص في قلبي ❤️</p>
-  <p>⭐ ✨ ⭐</p>
-</section>
-
-<!-- النهاية الكبرى: 11 ثانية -->
-<section class="scene" id="finalScene">
-  <div class="stars"></div>
-  <img class="scene-photo"
-       src="IMG_20261010_234506.png"
-       alt="">
-  <div class="final-text">كل عام وأنتِ بخير يا سمية ❤️</div>
-</section>
-
-<audio id="music" loop preload="auto">
+<!-- الموسيقى -->
+<audio id="birthdayMusic" loop preload="auto">
   <source
     src="TAGNE%20%C3%97%20MANAL%20-%20MAAK%20%28%20LYRICS%20-%20%D9%83%D9%84%D9%85%D8%A7%D8%AA%20%29.m4a"
     type="audio/mp4">
 </audio>
 
+<!-- المشهد 1: البداية -->
+<section class="scene active" id="scene1">
+  <div class="stars"></div>
+
+  <div class="start-card">
+    <div style="font-size:38px">🌹 🌹 🌹</div>
+    <div class="big-heart">♥</div>
+
+    <h1>سمية ❤️</h1>
+    <p>هناك مفاجأة صغيرة لشخص مميز جدًا...</p>
+
+    <button class="start-button" id="startButton">
+      اضغطي هنا ❤️
+    </button>
+
+    <p class="small-note">صُنعت بكل الحب من أجلكِ</p>
+  </div>
+</section>
+
+<!-- المشهد 2: العد التنازلي -->
+<section class="scene" id="scene2">
+  <div class="stars"></div>
+  <h2>استعدّي لمفاجأتكِ...</h2>
+  <div class="count-number" id="countNumber">3</div>
+</section>
+
+<!-- المشهد 3 -->
+<section class="scene" id="scene3">
+  <div class="stars"></div>
+  <h2>كل شيء يبدأ بكِ ❤️</h2>
+  <img class="scene-photo"
+       src="IMG_20261010_234234.png"
+       alt="ذكرى سمية">
+  <p>اليوم ليس يومًا عاديًا...</p>
+</section>
+
+<!-- المشهد 4 -->
+<section class="scene" id="scene4">
+  <div class="stars"></div>
+  <h1>Happy Birthday</h1>
+  <h2 class="gold">Soumia ❤️</h2>
+  <img class="scene-photo"
+       src="IMG_20261010_234245.png"
+       alt="عيد ميلاد سمية">
+</section>
+
+<!-- المشهد 5 -->
+<section class="scene" id="scene5">
+  <div class="stars"></div>
+  <div class="big-heart">♥</div>
+  <h1>Soumia</h1>
+  <h2>I LOVE YOU ❤️</h2>
+  <p>أنتِ قريبة من قلبي مهما ابتعدت المسافات.</p>
+</section>
+
+<!-- المشهد 6 -->
+<section class="scene" id="scene6">
+  <div class="stars"></div>
+  <img class="scene-photo wide"
+       src="IMG_20261010_234310.png"
+       alt="ذكرى جميلة">
+  <h2>أنتِ مميزة ❤️</h2>
+  <p>وجودكِ يجعل الأشياء الجميلة أجمل.</p>
+</section>
+
+<!-- المشهد 7 -->
+<section class="scene" id="scene7">
+  <div class="stars"></div>
+  <img class="scene-photo"
+       src="IMG_20261010_234325.png"
+       alt="لحظة مميزة">
+  <h2>إلى صاحبة أجمل ابتسامة 🌹</h2>
+  <p>أتمنى أن تبقى السعادة رفيقة قلبكِ.</p>
+</section>
+
+<!-- المشهد 8 -->
+<section class="scene" id="scene8">
+  <div class="stars"></div>
+  <img class="scene-photo"
+       src="IMG_20261010_234340.png"
+       alt="هدية سمية">
+  <h2 class="gold">كل عام وأنتِ بخير ❤️</h2>
+</section>
+
+<!-- المشهد 9: عيد الميلاد -->
+<section class="scene" id="scene9">
+  <div class="stars"></div>
+  <div style="font-size:100px; filter:drop-shadow(0 0 20px #ff174f)">
+    🎂
+  </div>
+  <h1>17</h1>
+  <h2>سنة جميلة وبداية أجمل ✨</h2>
+  <p>أتمنى لكِ عامًا مليئًا بالفرح والأحلام.</p>
+</section>
+
+<!-- المشهد 10 -->
+<section class="scene" id="scene10">
+  <div class="stars"></div>
+  <img class="scene-photo wide"
+       src="IMG_20261010_234359.png"
+       alt="رسالة حب">
+  <h2>I LOVE YOU ❤️</h2>
+  <p>حتى المسافات لا تستطيع أن تمنع المشاعر الصادقة.</p>
+</section>
+
+<!-- المشهد 11: الاعتذار -->
+<section class="scene" id="scene11">
+  <div class="stars"></div>
+  <img class="scene-photo"
+       src="IMG_20261010_234455.png"
+       alt="هدية من القلب">
+  <h2>رسالة من قلبي إليكِ 💌</h2>
+  <p>
+    آسف لأنني لم أقدم لكِ هدية مادية بسبب البعد،
+    لكنني أردت أن أصنع لكِ شيئًا يحمل جزءًا من قلبي. ❤️
+  </p>
+</section>
+
+<!-- المشهد 12: النهاية -->
+<section class="scene" id="scene12">
+  <div class="stars"></div>
+
+  <img class="scene-photo"
+       src="IMG_20261010_234506.png"
+       alt="ذكرى أخيرة">
+
+  <h1>Happy Birthday, Soumia ❤️</h1>
+  <h2 class="gold">15 October 2010 🎂</h2>
+
+  <p>May your smile always shine brighter than the stars ✨</p>
+  <p>I LOVE YOU ❤️</p>
+</section>
+
 <script>
-const scenes = [
-  {id:"countScene",duration:4000},
-  {id:"roseScene",duration:7000},
-  {id:"heartScene",duration:7000},
-  {id:"birthdayScene",duration:7000},
-  {id:"messageScene",duration:14000},
-  {id:"loveScene",duration:12000},
-  {id:"moonScene",duration:8000},
-  {id:"finalScene",duration:11000}
-];
+const scenes = Array.from(document.querySelectorAll(".scene"));
+const startButton = document.getElementById("startButton");
+const countNumber = document.getElementById("countNumber");
+const birthdayMusic = document.getElementById("birthdayMusic");
 
-let started=false;
-let activeFloating=null;
+let started = false;
+let timers = [];
+let particleTimer = null;
 
-function showScene(id){
-  document.querySelectorAll(".scene").forEach(scene=>{
-    scene.classList.remove("active");
+function showScene(index) {
+  scenes.forEach((scene, i) => {
+    scene.classList.toggle("active", i === index);
   });
-  document.getElementById(id).classList.add("active");
 }
 
-function floatEffects(sceneId){
-  if(activeFloating) clearInterval(activeFloating);
-  const scene=document.getElementById(sceneId);
+function createStars(scene) {
+  const holder = scene.querySelector(".stars");
 
-  activeFloating=setInterval(()=>{
-    if(!scene.classList.contains("active")){
-      clearInterval(activeFloating);
-      activeFloating=null;
+  if (!holder || holder.childElementCount) return;
+
+  for (let i = 0; i < 45; i++) {
+    const star = document.createElement("span");
+
+    star.className = "star";
+    star.textContent = Math.random() > .5 ? "✦" : "·";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.fontSize = (8 + Math.random() * 14) + "px";
+    star.style.setProperty(
+      "--duration",
+      (1.5 + Math.random() * 4) + "s"
+    );
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    holder.appendChild(star);
+  }
+}
+
+scenes.forEach(createStars);
+
+function makeParticle() {
+  const symbols = ["❤️", "♥", "🌹", "✨", "✦"];
+  const particle = document.createElement("span");
+
+  particle.className = "particle";
+  particle.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  particle.style.left = Math.random() * 100 + "vw";
+  particle.style.fontSize = (12 + Math.random() * 24) + "px";
+  particle.style.setProperty(
+    "--duration",
+    (5 + Math.random() * 5) + "s"
+  );
+
+  document.body.appendChild(particle);
+
+  setTimeout(() => particle.remove(), 10500);
+}
+
+function startParticles() {
+  if (particleTimer) return;
+  particleTimer = setInterval(makeParticle, 350);
+}
+
+function startCountdown() {
+  showScene(1);
+
+  let number = 3;
+  countNumber.textContent = number;
+
+  const interval = setInterval(() => {
+    number--;
+
+    if (number > 0) {
+      countNumber.textContent = number;
+      countNumber.style.animation = "none";
+      void countNumber.offsetWidth;
+      countNumber.style.animation = "";
+    } else {
+      clearInterval(interval);
+      startMainShow();
+    }
+  }, 2000);
+
+  timers.push(interval);
+}
+
+function startMainShow() {
+  /*
+    المدة الإجمالية المستهدفة: 50 ثانية بعد الضغط.
+    العد التنازلي: 6 ثوانٍ.
+    المشاهد اللاحقة: 44 ثانية.
+    شاشة النهاية تبقى ظاهرة بعد انتهاء العرض.
+  */
+
+  const schedule = [
+    { scene: 2, duration: 4000 },
+    { scene: 3, duration: 4000 },
+    { scene: 4, duration: 5000 },
+    { scene: 5, duration: 5000 },
+    { scene: 6, duration: 4000 },
+    { scene: 7, duration: 4000 },
+    { scene: 8, duration: 4000 },
+    { scene: 9, duration: 4000 },
+    { scene: 10, duration: 4000 },
+    { scene: 11, duration: 3000 },
+    { scene: 12, duration: 3000 }
+  ];
+
+  let index = 0;
+
+  function next() {
+    if (index >= schedule.length) {
+      showScene(11);
       return;
     }
 
-    const item=document.createElement("span");
-    item.className="floating";
-    item.textContent=["❤️","🌹","✨","💗"][Math.floor(Math.random()*4)];
-    item.style.left=Math.random()*92+"%";
-    item.style.fontSize=(18+Math.random()*25)+"px";
-    item.style.animationDuration=(4+Math.random()*3)+"s";
-    scene.appendChild(item);
-    setTimeout(()=>item.remove(),7500);
-  },400);
-}
+    const item = schedule[index];
 
-function startBirthday(){
-  if(started) return;
-  started=true;
-
-  const music=document.getElementById("music");
-  music.volume=.7;
-  music.play().catch(()=>{
-    console.log("تحقق من اسم ملف الموسيقى إذا لم تعمل.");
-  });
-
-  let index=0;
-  let count=3;
-  const countElement=document.getElementById("countNumber");
-
-  function nextScene(){
-    const current=scenes[index];
-    showScene(current.id);
-    floatEffects(current.id);
-
-    if(current.id==="countScene"){
-      count=3;
-      countElement.textContent=count;
-
-      const counter=setInterval(()=>{
-        count--;
-        if(count>=1){
-          countElement.style.animation="none";
-          void countElement.offsetWidth;
-          countElement.textContent=count;
-          countElement.style.animation="countMove 1.3s ease both";
-        }else{
-          clearInterval(counter);
-        }
-      },1333);
-    }
-
+    showScene(item.scene);
     index++;
 
-    if(index<scenes.length){
-      setTimeout(nextScene,current.duration);
-    }else{
-      // تبقى النهاية ظاهرة بعد اكتمال العرض.
-      floatEffects("finalScene");
-    }
+    const timer = setTimeout(next, item.duration);
+    timers.push(timer);
   }
 
-  nextScene();
+  next();
 }
 
-document.getElementById("startButton")
-  .addEventListener("click",startBirthday);
+startButton.addEventListener("click", async () => {
+  if (started) return;
+
+  started = true;
+  startButton.disabled = true;
+
+  startParticles();
+
+  /*
+    محاولة تشغيل الموسيقى بعد تفاعل المستخدم.
+    إذا لم يعمل الملف، تحقق من وجوده واسمه في GitHub.
+  */
+  try {
+    birthdayMusic.volume = 0.7;
+    await birthdayMusic.play();
+  } catch (error) {
+    console.warn("تعذر تشغيل الموسيقى:", error);
+  }
+
+  startCountdown();
+});
 </script>
 
 </body>
-    </html>
+  </html>
